@@ -250,15 +250,20 @@
       overlay.dataset.noTranslate = "";
       overlay.setAttribute("role", "status");
       overlay.setAttribute("aria-live", "polite");
-      overlay.innerHTML = '<div class="developer-simulation-window"><div class="developer-simulation-bar"><span>DEVELOPER CONSOLE</span><span>LOCAL SIMULATION</span></div><div class="developer-simulation-body"><p class="developer-simulation-label">SYSTEM DIAGNOSTICS / VISUAL DEMO</p><div class="developer-simulation-log"></div><div class="developer-simulation-progress"><span></span></div><p class="developer-simulation-status">SIMULATION ONLY — NO SYSTEM ACCESS</p></div></div>';
+      overlay.innerHTML = '<div class="developer-simulation-window"><div class="developer-simulation-bar"><span>DEVELOPER CONSOLE / SYSTEM ACCESS</span><span class="developer-simulation-clock">00:00:00</span></div><div class="developer-simulation-body"><p class="developer-simulation-label">INITIALIZING LOCAL VISUAL SIMULATION // PORTFOLIO BUILD 001</p><div class="developer-simulation-grid"><aside class="developer-simulation-sidebar"><span>MODULES</span><b>01&nbsp; CORE</b><b>02&nbsp; NETWORK</b><b>03&nbsp; SECURITY</b><b>04&nbsp; UI LAYER</b></aside><div class="developer-simulation-main"><div class="developer-simulation-log"></div><p class="developer-simulation-success" hidden>The hacking was successful!</p></div></div><div class="developer-simulation-progress"><span></span></div><p class="developer-simulation-status">SIMULATION ONLY — NO SYSTEM ACCESS</p></div><div class="developer-simulation-footer"><span>LOCAL SANDBOX</span><span>CONNECTION: SIMULATED</span><span>END OF SEQUENCE</span></div></div>';
       document.body.append(overlay);
       const log = overlay.querySelector(".developer-simulation-log");
-      const lines = ["$ initializing developer interface...", "$ checking page modules ........ OK", "$ loading visual diagnostics ... OK", "$ developer view ready"];
+      const lines = ["$ initializing developer interface...", "$ checking page modules ................ OK", "$ opening secure local channel .......... OK", "$ scanning portfolio assets ............. OK", "$ loading developer diagnostics ........ OK", "$ authorization sequence complete"];
       lines.forEach((line, index) => window.setTimeout(() => {
         const entry = document.createElement("p");
         entry.textContent = line;
         log.append(entry);
-      }, 360 + index * 520));
+      }, 250 + index * 620));
+      window.setTimeout(() => {
+        overlay.querySelector(".developer-simulation-clock").textContent = "00:00:04";
+        overlay.querySelector(".developer-simulation-status").textContent = "ACCESS SEQUENCE COMPLETE // LOCAL VISUAL SIMULATION";
+        overlay.querySelector(".developer-simulation-success").hidden = false;
+      }, 4100);
       window.setTimeout(() => {
         overlay.classList.add("is-closing");
         window.setTimeout(() => overlay.remove(), 240);
@@ -266,7 +271,7 @@
         hackRunning = false;
         showResponse("", "developer mode simulation complete.");
         commandInput.focus({ preventScroll: true });
-      }, 3000);
+      }, 5200);
     };
 
     terminalForm.addEventListener("submit", (event) => {
