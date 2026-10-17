@@ -1,10 +1,37 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101510"><meta name="description" content="開発ログ — GREEN TERMINAL"><title>DEVLOG — GREEN TERMINAL</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
-<body><a class="skip-link" href="#main">本文へスキップ</a><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">▣</span><span>GREEN TERMINAL<span class="brand-sub">PERSONAL PORTFOLIO</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span>＋</span></button><nav class="site-nav" id="site-nav" aria-label="メインナビゲーション"><a href="index.html">HOME</a><a href="projects.html">PROJECTS</a><a href="about.html">ABOUT</a><a class="active" href="devlog.html">DEVLOG</a><a href="contact.html">CONTACT</a></nav></header>
-<main id="main"><section class="page-hero section-wrap"><p class="eyebrow">LOG FILES / DEVLOG</p><h1>開発ログ<span class="accent">.</span></h1><p>完成報告だけではなく、考えたことと試したことを残す。</p></section>
-<section class="section-wrap section-block"><div class="log-list">
-<article class="log-entry"><div class="log-entry-meta"><span>LOG_001</span><span>NOTE</span></div><div class="log-entry-body"><h2>エラーを解決した過程も記録する</h2><p>エラーが出たときは、まずコンソールのメッセージを確認し、接続先・設定・データの有無を一つずつ切り分ける。修正前後の状態を残すと、同じ問題に再び遭遇したときに役立つ。</p><p class="placeholder-note">記録例です。自分が実際に遭遇したエラーや解決方法に置き換えてください。</p></div><span class="log-entry-mark">↗</span></article>
-<article class="log-entry"><div class="log-entry-meta"><span>LOG_002</span><span>LESSON</span></div><div class="log-entry-body"><h2>技術を変更した理由を残す</h2><p>ライブラリやデータベースを変更した場合は、変更前の課題、選んだ理由、移行後に確認したことをまとめる。単に技術名を列挙するより、判断の過程が伝わる記録を目指す。</p><p class="placeholder-note">記録例です。自分のプロジェクトでの実際の判断に合わせて書き換えてください。</p></div><span class="log-entry-mark">↗</span></article>
-<article class="log-entry"><div class="log-entry-meta"><span>LOG_003</span><span>TODO</span></div><div class="log-entry-body"><h2>次に改善したいこと</h2><p>作品の使いやすさ、スマートフォン表示、エラー処理、説明の分かりやすさなど、次に改善する点を具体的に書く。</p><p class="placeholder-note">自分が次に取り組みたい改善項目を記入してください。</p></div><span class="log-entry-mark">↗</span></article>
-</div><div class="callout"><span class="callout-mark">+</span><p><strong>新しいログを追加する</strong><br>実際に起きたことを、日付・課題・試したこと・結果の順に記録すると読みやすくなります。</p></div></section></main>
-<footer class="site-footer"><a class="footer-brand" href="index.html">GREEN TERMINAL<span>© <span data-year></span> YOUR_HANDLE</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer></body></html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101510">
+  <meta name="description" content="制作中に試したこと、つまずいたこと、改善したことを記録しています。">
+  <title>DEVLOG — AIKICHIN PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム"><span class="brand-mark" aria-hidden="true">▣</span><span>PS C:\Users\aikichin&gt;<span class="brand-sub">AIKICHIN PORTFOLIO</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span aria-hidden="true">＋</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="index.html">HOME</a><a href="projects.html">PROJECTS</a><a href="about.html">ABOUT</a><a class="active" href="devlog.html" aria-current="page">DEVLOG</a><a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero section-wrap"><p class="eyebrow">LOG FILES / DEVLOG</p><h1>開発ログ<span class="accent">.</span></h1><p>完成報告だけでなく、考えたことや試したことも記録します。</p></section>
+    <section class="section-wrap section-block">
+      <div class="log-list">
+        <article class="log-entry"><div class="log-entry-meta"><span>LOG_001</span><span>DEPLOY</span></div><div class="log-entry-body"><h2>GitHub Pagesで公開する</h2><p>Pagesの公開設定を確認し、静的サイトをデプロイするGitHub Actionsのワークフローを追加しました。公開元をGitHub Actionsに切り替え、サイトが表示されることを確認しました。</p></div><span class="log-entry-mark" aria-hidden="true">↗</span></article>
+        <article class="log-entry"><div class="log-entry-meta"><span>LOG_002</span><span>PLAN</span></div><div class="log-entry-body"><h2>制作内容を正確に伝える</h2><p>各ページの説明を実際の制作内容に合わせて整理し、プロフィール、作品の詳細、公開リンクを分かりやすくまとめていきます。</p></div><span class="log-entry-mark" aria-hidden="true">↗</span></article>
+      </div>
+      <div class="callout"><span class="callout-mark" aria-hidden="true">+</span><p><strong>開発ログについて</strong><br>課題・試したこと・結果を、自分の言葉で記録しています。</p></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <a class="footer-brand" href="index.html">portfolio<span>© <span data-year></span> AIKICHIN0_0</span></a>
+    <p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a>
+  </footer>
+</body>
+</html>
+

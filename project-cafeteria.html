@@ -1,17 +1,37 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101510"><title>CAFETERIA MONITOR — GREEN TERMINAL</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
-<body><a class="skip-link" href="#main">本文へスキップ</a>
-<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">▣</span><span>GREEN TERMINAL<span class="brand-sub">PERSONAL PORTFOLIO</span></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span>＋</span></button><nav class="site-nav" id="site-nav" aria-label="メインナビゲーション"><a href="index.html">HOME</a><a class="active" href="projects.html">PROJECTS</a><a href="about.html">ABOUT</a><a href="devlog.html">DEVLOG</a><a href="contact.html">CONTACT</a></nav></header>
-<main id="main">
-<section class="page-hero section-wrap"><p class="eyebrow">PROJECT / 001 — WEB APPLICATION</p><h1>食堂混雑状況<br><span class="accent">確認サイト.</span></h1><p>食堂の混雑状況を確認できるWebアプリ。</p><div class="tag-row"><span>JavaScript</span><span>Supabase</span><span>HTML / CSS</span></div></section>
-<section class="section-wrap detail-layout section-block">
-  <div class="detail-main">
-    <div class="detail-preview visual-cafeteria"><div class="mini-window"><div class="mini-window-top"><span>CAFETERIA / STATUS</span><span>● LIVE UI</span></div><div class="mini-status"><span class="mini-light"></span><span>混雑状況</span></div><div class="mini-big">CHECK<span>_</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
-    <section class="content-section"><p class="eyebrow">01 / OVERVIEW</p><h2>概要</h2><p>食堂の混雑状況を利用者が確認できるようにすることを目指したWebアプリです。表示画面とデータベースを接続し、取得した情報を画面に反映する仕組みを作りました。</p></section>
-    <section class="content-section"><p class="eyebrow">02 / IMPLEMENTATION</p><h2>取り組んだこと</h2><ul class="feature-list"><li>混雑状況を表示するWeb画面の作成</li><li>Supabaseを使ったデータ取得と画面更新</li><li>データベースの接続・ポリシー・Realtime設定の確認</li><li>接続エラーやデータが表示されない問題の切り分け</li></ul></section>
-    <section class="content-section"><p class="eyebrow">03 / LEARNINGS</p><h2>学んだこと・改善点</h2><p>フロントエンドの表示だけでなく、データベースの設定や通信状態まで確認する必要があると学びました。今後は、実際の画面キャプチャ、データ更新の仕様、テスト結果を追加して説明を具体化します。</p><p class="placeholder-note">※ 実際に完成した機能・未完成の機能を確認し、提出前に文章を更新してください。</p></section>
-  </div>
-  <aside class="detail-sidebar"><div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl><dt>TYPE</dt><dd>Web Application</dd><dt>TECHNOLOGY</dt><dd>HTML / CSS / JavaScript / Supabase</dd><dt>STATUS</dt><dd><span class="status-inline"><i></i> 開発・改善</span></dd><dt>ROLE</dt><dd>個人制作</dd></dl></div><div class="side-panel"><p class="eyebrow">LINKS</p><p class="small-muted">公開デモやソースコードを用意したら、リンクを追加してください。</p><span class="disabled-link">Demo URL — 未設定</span><span class="disabled-link">Source code — 未設定</span></div></aside>
-</section>
-<section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="project-task-calendar.html">次の作品：課題カレンダー →</a></section>
-</main><footer class="site-footer"><a class="footer-brand" href="index.html">GREEN TERMINAL<span>© <span data-year></span> YOUR_HANDLE</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer></body></html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101510">
+  <meta name="description" content="JavaScriptとSupabaseを使った食堂混雑状況確認サイトの制作記録です。">
+  <title>CAFETERIA MONITOR — AIKICHIN PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム"><span class="brand-mark" aria-hidden="true">▣</span><span>PS C:\Users\aikichin&gt;<span class="brand-sub">AIKICHIN PORTFOLIO</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span aria-hidden="true">＋</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="index.html">HOME</a><a class="active" href="projects.html" aria-current="page">PROJECTS</a><a href="about.html">ABOUT</a><a href="devlog.html">DEVLOG</a><a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero section-wrap"><p class="eyebrow">PROJECT / 001 — WEB APPLICATION</p><h1>食堂混雑状況<br><span class="accent">確認サイト.</span></h1><p>食堂の混雑状況を確認できるWebアプリです。</p><div class="tag-row"><span>JavaScript</span><span>Supabase</span><span>HTML / CSS</span></div></section>
+    <section class="section-wrap detail-layout section-block">
+      <div class="detail-main">
+        <div class="detail-preview visual-cafeteria"><div class="mini-window"><div class="mini-window-top"><span>CAFETERIA / STATUS</span><span>PROJECT / 01</span></div><div class="mini-status"><span class="mini-light"></span><span>混雑状況</span></div><div class="mini-big">CHECK<span>_</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <section class="content-section"><p class="eyebrow">01 / OVERVIEW</p><h2>概要</h2><p>食堂の混雑状況を利用者が確認できるようにするWebアプリです。JavaScriptとSupabaseを使い、取得したデータを画面に表示する仕組みに取り組んでいます。</p></section>
+        <section class="content-section"><p class="eyebrow">02 / IMPLEMENTATION</p><h2>取り組んでいること</h2><ul class="feature-list"><li>混雑状況を表示する画面の作成</li><li>Supabaseからのデータ取得</li><li>取得した情報を画面へ反映</li><li>データが表示されない場合の原因切り分け</li></ul></section>
+        <section class="content-section"><p class="eyebrow">03 / LEARNINGS</p><h2>学んだこと・改善したいこと</h2><p>画面を作るだけでなく、データの取得から表示までの流れを確認することが大切だと学びました。今後は実際の画面やデータ更新の動きを記録し、説明をより具体的にしていきます。</p></section>
+      </div>
+      <aside class="detail-sidebar"><div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl><dt>TYPE</dt><dd>Web Application</dd><dt>TECHNOLOGY</dt><dd>HTML / CSS / JavaScript / Supabase</dd><dt>STATUS</dt><dd><span class="status-inline"><i></i> 開発・改善</span></dd><dt>ROLE</dt><dd>個人制作</dd></dl></div></aside>
+    </section>
+    <section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="project-task-calendar.html">次の作品：課題カレンダー →</a></section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">portfolio<span>© <span data-year></span> AIKICHIN0_0</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer>
+</body>
+</html>
+
