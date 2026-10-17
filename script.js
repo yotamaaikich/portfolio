@@ -113,6 +113,93 @@
   pageTransition.innerHTML = '<div class="page-transition-window"><div class="page-transition-titlebar"><span>AIKICHIN PORTFOLIO</span><span aria-hidden="true">▰</span></div><div class="page-transition-content"><span class="page-transition-mark" aria-hidden="true">▣</span><div><strong>Loading page...</strong><span>PLEASE WAIT / SYSTEM READY</span></div></div><div class="page-transition-progress"><span></span></div></div>';
   document.body.append(pageTransition);
 
+  const scrollProgress = document.createElement("div");
+  scrollProgress.className = "scroll-progress";
+  scrollProgress.setAttribute("role", "progressbar");
+  scrollProgress.setAttribute("aria-label", "Page scroll progress");
+  scrollProgress.setAttribute("aria-valuemin", "0");
+  scrollProgress.setAttribute("aria-valuemax", "100");
+  scrollProgress.setAttribute("aria-valuenow", "0");
+  scrollProgress.dataset.noTranslate = "";
+  document.body.append(scrollProgress);
+  let scrollProgressFrame = 0;
+  const updateScrollProgress = () => {
+    if (scrollProgressFrame) return;
+    scrollProgressFrame = window.requestAnimationFrame(() => {
+      scrollProgressFrame = 0;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+      scrollProgress.style.transform = `scaleX(${ratio})`;
+      scrollProgress.setAttribute("aria-valuenow", String(Math.round(ratio * 100)));
+      scrollProgress.classList.toggle("is-visible", maxScroll > 0);
+    });
+  };
+  window.addEventListener("scroll", updateScrollProgress, { passive: true });
+  window.addEventListener("resize", updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  const revealTargets = document.querySelectorAll(".page-hero > *, .section-heading, .project-grid .project-card, .content-section, .history-entry, .detail-sidebar");
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const siblingOrder = new Map();
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+    revealTargets.forEach((element) => {
+      const parent = element.parentElement;
+      const index = siblingOrder.get(parent) || 0;
+      siblingOrder.set(parent, index + 1);
+      element.style.setProperty("--reveal-delay", `${Math.min(index, 4) * 75}ms`);
+      element.classList.add("reveal-on-scroll");
+      revealObserver.observe(element);
+    });
+  }
+
+  document.querySelectorAll(".project-grid .project-card").forEach((card, index) => {
+    const visual = card.querySelector(".project-visual");
+    const body = card.querySelector(".project-card-body");
+    if (!visual || !body) return;
+    const title = body.querySelector(".card-title-row h2, .card-title-row h3")?.textContent.trim() || "Project";
+    const description = body.querySelector(":scope > p:not(.notebook-file)")?.textContent.trim() || "Open project details";
+    const preview = document.createElement("div");
+    preview.className = "project-console-preview";
+    preview.setAttribute("aria-hidden", "true");
+    [`PROJECT FOUND / ${String(index + 1).padStart(2, "0")}`, title, description, "OPEN DETAILS ↗"].forEach((text, lineIndex, lines) => {
+      const line = document.createElement("span");
+      line.className = lineIndex === 0 ? "project-console-label" : lineIndex === lines.length - 1 ? "project-console-action" : "";
+      line.textContent = text;
+      preview.append(line);
+    });
+    visual.append(preview);
+
+    const toggle = document.createElement("button");
+    toggle.className = "project-console-toggle";
+    toggle.type = "button";
+    toggle.textContent = "VIEW PROJECT LOG";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", `作品ログを表示: ${title}`);
+    toggle.addEventListener("click", () => {
+      const isOpen = card.classList.toggle("show-console");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.textContent = isOpen ? "HIDE PROJECT LOG" : "VIEW PROJECT LOG";
+    });
+    body.append(toggle);
+  });
+  languageSelect.addEventListener("change", () => {
+    document.querySelectorAll(".project-grid .project-card").forEach((card) => {
+      const preview = card.querySelector(".project-console-preview");
+      const body = card.querySelector(".project-card-body");
+      if (!preview || !body) return;
+      const title = body.querySelector(".card-title-row h2, .card-title-row h3")?.textContent.trim();
+      const description = body.querySelector(":scope > p:not(.notebook-file)")?.textContent.trim();
+      if (title) preview.children[1].textContent = title;
+      if (description) preview.children[2].textContent = description;
+    });
+  });
+
   const showPageTransition = () => pageTransition.classList.add("is-active");
   const navigateWithTransition = (url) => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
