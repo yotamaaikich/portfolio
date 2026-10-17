@@ -1,4 +1,41 @@
 (() => {
+  const transitionKey = "aikichin-portfolio-page-transition";
+  const pageTransition = document.createElement("div");
+  pageTransition.className = "page-transition";
+  pageTransition.setAttribute("aria-hidden", "true");
+  pageTransition.innerHTML = '<div class="page-transition-window"><div class="page-transition-titlebar"><span>AIKICHIN PORTFOLIO</span><span aria-hidden="true">▰</span></div><div class="page-transition-content"><span class="page-transition-mark" aria-hidden="true">▣</span><div><strong>Loading page...</strong><span>PLEASE WAIT / SYSTEM READY</span></div></div><div class="page-transition-progress"><span></span></div></div>';
+  document.body.append(pageTransition);
+
+  const showPageTransition = () => pageTransition.classList.add("is-active");
+  const navigateWithTransition = (url) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      window.location.assign(url);
+      return;
+    }
+    try { sessionStorage.setItem(transitionKey, "true"); } catch { /* Navigation still works without storage. */ }
+    showPageTransition();
+    window.setTimeout(() => window.location.assign(url), 420);
+  };
+
+  let arrivingFromPage = false;
+  try {
+    arrivingFromPage = sessionStorage.getItem(transitionKey) === "true";
+    sessionStorage.removeItem(transitionKey);
+  } catch { /* Skip the arrival animation when storage is unavailable. */ }
+  if (arrivingFromPage) {
+    showPageTransition();
+    window.setTimeout(() => pageTransition.classList.remove("is-active"), 260);
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target || link.hasAttribute("download")) return;
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin !== window.location.origin || !/\.html?$/i.test(destination.pathname) || (destination.pathname === window.location.pathname && !destination.search)) return;
+    event.preventDefault();
+    navigateWithTransition(destination.href);
+  });
+
   const startup = document.querySelector("#startup-screen");
   if (startup) {
     const skipButton = startup.querySelector("[data-startup-skip]");
@@ -114,7 +151,7 @@
           break;
         case "contact":
           showResponse(command, "opening contact/ …");
-          window.setTimeout(() => window.location.assign("contact.html"), 400);
+          window.setTimeout(() => navigateWithTransition("contact.html"), 400);
           break;
         case "matrix": {
           showResponse(command, "initializing green mode … system ready.");
