@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="あいきちのポートフォリオ。制作物、開発記録、学んだことをまとめています。">
   <title>HOME — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261018-2">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261018-3">
+  <script src="script.js?v=20261018-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
@@ -58,7 +58,14 @@
               <li><a href="#project-task-calendar">app-development</a></li>
               <li><a href="#profile">creative-coding</a></li>
             </ul>
-            <p><span class="prompt">yotamaaikich@portfolio</span>:<span class="path">~</span>$ <span class="cursor" aria-hidden="true"></span></p>
+            <form class="terminal-command" data-terminal-form autocomplete="off">
+              <label class="sr-only" for="terminal-command-input">ターミナルコマンド</label>
+              <span class="prompt">yotamaaikich@portfolio</span>:<span class="path">~</span>$
+              <input id="terminal-command-input" class="terminal-input" name="command" type="text" maxlength="24" spellcheck="false" autocapitalize="off" aria-describedby="terminal-command-hint" placeholder="help を入力">
+              <button class="terminal-submit" type="submit" aria-label="コマンドを実行">↵</button>
+            </form>
+            <p class="terminal-command-hint" id="terminal-command-hint">TRY: help / projects / profile / matrix</p>
+            <div class="terminal-response" data-terminal-response aria-live="polite" aria-atomic="true" hidden></div>
           </div>
           <div class="terminal-foot"><span>SESSION: ACTIVE</span><span>UTF-8</span></div>
         </aside>
