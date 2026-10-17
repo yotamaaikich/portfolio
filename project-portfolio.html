@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101510">
+  <meta name="description" content="企画・デザイン・実装・公開まで行ったポートフォリオサイトの制作記録です。">
+  <title>PORTFOLIO SITE — AIKICHIN PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css?v=20261018-startup">
+  <script src="script.js?v=20261018-startup" defer></script>
+</head>
+<body>
+  <div class="startup-screen" id="startup-screen" aria-label="サイト起動演出">
+    <div class="startup-window">
+      <div class="startup-titlebar"><span class="startup-title-icon" aria-hidden="true">▣</span><span>AIKICHIN PORTFOLIO STARTUP</span><span class="startup-title-version">PERSONAL BUILD 001</span></div>
+      <div class="startup-content">
+        <div class="startup-mark" aria-hidden="true">▣</div>
+        <div><p class="startup-heading">Starting Windows<span aria-hidden="true">...</span></p><p class="startup-subheading">INITIALIZING PERSONAL PORTFOLIO</p></div>
+      </div>
+      <p class="startup-progress-label" role="status" aria-live="polite">Loading profile and projects...</p>
+      <div class="startup-progress" role="progressbar" aria-label="サイトを起動しています"><span></span></div>
+      <div class="startup-bottom"><span>SYSTEM STARTUP / 001</span><button class="startup-skip" type="button" data-startup-skip>Skip startup</button></div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム"><span class="brand-mark" aria-hidden="true">▣</span><span>aikichin0_0@portfolio:~$<span class="brand-sub">AIKICHIN PORTFOLIO</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span aria-hidden="true">＋</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="index.html">HOME</a><a class="active" href="projects.html" aria-current="page">PROJECTS</a><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero section-wrap">
+      <p class="eyebrow">PROJECT / 003 — WEB PORTFOLIO</p>
+      <h1>ポートフォリオ<br><span class="accent">サイト.</span></h1>
+      <p>学校や個人制作で取り組んだ作品、活動、学んだ技術を紹介するために制作・公開しているWebサイトです。</p>
+      <div class="tag-row"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span></div>
+    </section>
+    <section class="section-wrap detail-layout section-block">
+      <div class="detail-main">
+        <section class="content-section">
+          <p class="eyebrow">01 / OVERVIEW</p><h2>作品を伝える場所</h2>
+          <p>授業や個人開発で作ったものを見やすくまとめ、制作の背景やプロフィールと一緒に伝えることを目指しました。各ページを自分で更新しながら、GitHub Pagesで公開しています。</p>
+        </section>
+        <section class="content-section">
+          <p class="eyebrow">02 / DESIGN & FEATURES</p><h2>設計と工夫</h2>
+          <ul class="feature-list">
+            <li>緑を基調にしたターミナル風のデザインで、ページ全体の印象を統一</li>
+            <li>HOMEのターミナル欄にコマンドを入力すると、作品やプロフィールの位置へ移動</li>
+            <li>スマートフォンでも見やすいように、ナビゲーションやカード配置を調整</li>
+            <li>GitHub ActionsからGitHub Pagesへ自動デプロイ</li>
+            <li>今回、初回訪問時にレトロなWindows起動画面風アニメーションを追加</li>
+          </ul>
+        </section>
+        <section class="content-section">
+          <p class="eyebrow">03 / MY CONTRIBUTION</p><h2>担当したこと</h2>
+          <p>サイトのテーマと掲載内容を企画し、デザインの方向性や各ページの構成を決めて改善を重ねています。HTML / CSS / JavaScriptでの実装や文章の整理にはCodexも制作補助として活用しています。</p>
+        </section>
+      </div>
+      <aside class="detail-sidebar">
+        <div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl>
+          <dt>TYPE</dt><dd>Personal Portfolio</dd>
+          <dt>TECHNOLOGY</dt><dd>HTML / CSS / JavaScript</dd>
+          <dt>HOSTING</dt><dd>GitHub Pages</dd>
+          <dt>STATUS</dt><dd><span class="status-inline"><i></i> 公開中</span></dd>
+        </dl><a class="card-more" href="https://yotamaaikich.github.io/portfolio/" target="_blank" rel="noopener noreferrer">公開サイトを見る <span aria-hidden="true">↗</span></a></div>
+      </aside>
+    </section>
+    <section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="about.html">プロフィールを見る →</a></section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">portfolio<span>© <span data-year></span> AIKICHIN0_0</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer>
+</body>
+</html>

@@ -1,4 +1,31 @@
 (() => {
+  const startup = document.querySelector("#startup-screen");
+  if (startup) {
+    const skipButton = startup.querySelector("[data-startup-skip]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const sessionKey = "aikichin-portfolio-started";
+    let alreadyStarted = false;
+
+    try {
+      alreadyStarted = sessionStorage.getItem(sessionKey) === "true";
+      if (!alreadyStarted && !reducedMotion) sessionStorage.setItem(sessionKey, "true");
+    } catch {
+      // If session storage is unavailable, the intro still works for this page.
+    }
+
+    const finishStartup = () => {
+      startup.classList.add("is-finished");
+      window.setTimeout(() => startup.remove(), 600);
+    };
+
+    if (alreadyStarted || reducedMotion) {
+      startup.remove();
+    } else {
+      skipButton?.addEventListener("click", finishStartup, { once: true });
+      window.setTimeout(finishStartup, 2500);
+    }
+  }
+
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("#site-nav");
 

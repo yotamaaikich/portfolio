@@ -6,10 +6,22 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="Webサイトやアプリなど、これまでに制作したものを紹介します。">
   <title>PROJECTS — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261018-11">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261018-startup">
+  <script src="script.js?v=20261018-startup" defer></script>
 </head>
 <body>
+  <div class="startup-screen" id="startup-screen" aria-label="サイト起動演出">
+    <div class="startup-window">
+      <div class="startup-titlebar"><span class="startup-title-icon" aria-hidden="true">▣</span><span>AIKICHIN PORTFOLIO STARTUP</span><span class="startup-title-version">PERSONAL BUILD 001</span></div>
+      <div class="startup-content">
+        <div class="startup-mark" aria-hidden="true">▣</div>
+        <div><p class="startup-heading">Starting Windows<span aria-hidden="true">...</span></p><p class="startup-subheading">INITIALIZING PERSONAL PORTFOLIO</p></div>
+      </div>
+      <p class="startup-progress-label" role="status" aria-live="polite">Loading profile and projects...</p>
+      <div class="startup-progress" role="progressbar" aria-label="サイトを起動しています"><span></span></div>
+      <div class="startup-bottom"><span>SYSTEM STARTUP / 001</span><button class="startup-skip" type="button" data-startup-skip>Skip startup</button></div>
+    </div>
+  </div>
   <a class="skip-link" href="#main">本文へスキップ</a>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム"><span class="brand-mark" aria-hidden="true">▣</span><span>aikichin0_0@portfolio:~$<span class="brand-sub">AIKICHIN PORTFOLIO</span></span></a>
@@ -39,6 +51,17 @@
             <span class="visual-index">PROJECT / 02</span>
           </a>
           <div class="project-card-body"><div class="card-title-row"><h2>課題カレンダー</h2><span class="card-arrow" aria-hidden="true">↗</span></div><p>課題を日付ごとに整理するアプリ。2026年8月にFlutterとDartで個人開発しました。</p><div class="tag-row"><span>Flutter</span><span>Dart</span><span>App</span></div><a class="card-more" href="project-task-calendar.html">DETAILS <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="project-card featured-project">
+          <a class="project-visual visual-portfolio" href="project-portfolio.html" aria-label="ポートフォリオサイトの詳細">
+            <div class="portfolio-preview">
+              <div class="portfolio-preview-top"><span>AIKICHIN PORTFOLIO</span><span>LIVE / 2026</span></div>
+              <div class="portfolio-preview-title">進取、共生。<br><span>実践。</span></div>
+              <div class="portfolio-preview-bottom"><span>HTML / CSS / JS</span><span>GITHUB PAGES</span></div>
+            </div>
+            <span class="visual-index">PROJECT / 03</span>
+          </a>
+          <div class="project-card-body"><div class="card-title-row"><h2>ポートフォリオサイト</h2><span class="card-arrow" aria-hidden="true">↗</span></div><p>作品や活動を紹介するために、企画・デザイン・実装・公開まで行ったWebサイトです。</p><div class="tag-row"><span>HTML / CSS</span><span>JavaScript</span><span>GitHub Pages</span></div><a class="card-more" href="project-portfolio.html">DETAILS <span aria-hidden="true">→</span></a></div>
         </article>
       </div>
       <section class="classwork-section" aria-labelledby="classwork-title">
