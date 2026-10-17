@@ -202,6 +202,8 @@
     const commandInput = terminalForm.querySelector(".terminal-input");
     const response = document.querySelector("[data-terminal-response]");
     let matrixTimer;
+    let hackConfirmationPending = false;
+    let hackRunning = false;
 
     const showResponse = (command, message) => {
       response.replaceChildren();
@@ -240,12 +242,54 @@
       window.setTimeout(() => target.classList.remove("terminal-jump-highlight"), 1450);
     };
 
+    const runDeveloperMode = () => {
+      hackRunning = true;
+      terminalForm.querySelectorAll("input, button").forEach((control) => { control.disabled = true; });
+      const overlay = document.createElement("div");
+      overlay.className = "developer-simulation";
+      overlay.dataset.noTranslate = "";
+      overlay.setAttribute("role", "status");
+      overlay.setAttribute("aria-live", "polite");
+      overlay.innerHTML = '<div class="developer-simulation-window"><div class="developer-simulation-bar"><span>DEVELOPER CONSOLE</span><span>LOCAL SIMULATION</span></div><div class="developer-simulation-body"><p class="developer-simulation-label">SYSTEM DIAGNOSTICS / VISUAL DEMO</p><div class="developer-simulation-log"></div><div class="developer-simulation-progress"><span></span></div><p class="developer-simulation-status">SIMULATION ONLY — NO SYSTEM ACCESS</p></div></div>';
+      document.body.append(overlay);
+      const log = overlay.querySelector(".developer-simulation-log");
+      const lines = ["$ initializing developer interface...", "$ checking page modules ........ OK", "$ loading visual diagnostics ... OK", "$ developer view ready"];
+      lines.forEach((line, index) => window.setTimeout(() => {
+        const entry = document.createElement("p");
+        entry.textContent = line;
+        log.append(entry);
+      }, 360 + index * 520));
+      window.setTimeout(() => {
+        overlay.classList.add("is-closing");
+        window.setTimeout(() => overlay.remove(), 240);
+        terminalForm.querySelectorAll("input, button").forEach((control) => { control.disabled = false; });
+        hackRunning = false;
+        showResponse("", "developer mode simulation complete.");
+        commandInput.focus({ preventScroll: true });
+      }, 3000);
+    };
+
     terminalForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const command = commandInput.value.trim().toLowerCase();
-      if (!command) return;
+      if (!command || hackRunning) return;
 
       terminalCard.classList.remove("is-matrix");
+      if (hackConfirmationPending) {
+        hackConfirmationPending = false;
+        if (command === "y") {
+          showResponse(command, "starting developer mode simulation...");
+          runDeveloperMode();
+        } else if (command === "n") {
+          showResponse(command, "cancelled.");
+        } else {
+          hackConfirmationPending = true;
+          showResponse(command, "Do you want to hack this page? y/n");
+        }
+        commandInput.value = "";
+        if (!hackRunning) commandInput.focus({ preventScroll: true });
+        return;
+      }
       switch (command) {
         case "help":
           showResponse(command, "commands: whoami / ls / projects / cafeteria / calendar / profile / contact / matrix / clear");
@@ -281,6 +325,10 @@
           matrixTimer = window.setTimeout(() => terminalCard.classList.remove("is-matrix"), 1000);
           break;
         }
+        case "to hack":
+          hackConfirmationPending = true;
+          showResponse(command, "Do you want to hack this page? y/n");
+          break;
         case "clear":
           response.replaceChildren();
           response.hidden = true;
