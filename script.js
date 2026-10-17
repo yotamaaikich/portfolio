@@ -43,6 +43,7 @@
     const switcher = document.querySelector(".language-switch");
     if (switcher) switcher.setAttribute("aria-label", language === "ja" ? "言語" : language === "en" ? "Language" : "语言");
     document.querySelectorAll("body *").forEach((element) => {
+      if (element.closest("[data-no-translate]")) return;
       let attributes = originalAttributes.get(element);
       if (!attributes) { attributes = {}; originalAttributes.set(element, attributes); }
       for (const attribute of ["aria-label", "alt", "title"]) {
@@ -54,6 +55,7 @@
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     let node;
     while ((node = walker.nextNode())) {
+      if (node.parentElement?.closest("[data-no-translate]")) continue;
       const original = originalTextNodes.get(node) ?? node.nodeValue;
       originalTextNodes.set(node, original);
       const trimmed = original.trim();
@@ -106,6 +108,7 @@
   const transitionKey = "aikichin-portfolio-page-transition";
   const pageTransition = document.createElement("div");
   pageTransition.className = "page-transition";
+  pageTransition.setAttribute("data-no-translate", "");
   pageTransition.setAttribute("aria-hidden", "true");
   pageTransition.innerHTML = '<div class="page-transition-window"><div class="page-transition-titlebar"><span>AIKICHIN PORTFOLIO</span><span aria-hidden="true">▰</span></div><div class="page-transition-content"><span class="page-transition-mark" aria-hidden="true">▣</span><div><strong>Loading page...</strong><span>PLEASE WAIT / SYSTEM READY</span></div></div><div class="page-transition-progress"><span></span></div></div>';
   document.body.append(pageTransition);
