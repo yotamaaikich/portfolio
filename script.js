@@ -228,6 +228,32 @@
   window.addEventListener("pageshow", (event) => {
     if (!event.persisted) return;
     pageTransition.classList.remove("is-active");
+    document.querySelectorAll(".project-grid .project-card.show-console").forEach((card) => {
+      card.classList.remove("show-console");
+      const toggle = card.querySelector(".project-console-toggle");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.textContent = "VIEW PROJECT LOG";
+      }
+    });
+    if (document.activeElement?.closest?.(".project-grid .project-card")) document.activeElement.blur();
+
+    // The pointer can still be positioned over the same card after Back,
+    // which would immediately reopen its CSS :hover preview. Keep previews
+    // hidden until the pointer leaves the card (or the user uses the keyboard).
+    document.documentElement.classList.add("suppress-project-preview");
+    const releasePreviewSuppression = () => {
+      document.documentElement.classList.remove("suppress-project-preview");
+      window.removeEventListener("pointermove", releaseWhenPointerLeavesCard);
+      window.removeEventListener("keydown", releasePreviewSuppression);
+    };
+    const releaseWhenPointerLeavesCard = (pointerEvent) => {
+      const cardUnderPointer = document.elementFromPoint(pointerEvent.clientX, pointerEvent.clientY)?.closest(".project-grid .project-card");
+      if (cardUnderPointer) return;
+      releasePreviewSuppression();
+    };
+    window.addEventListener("pointermove", releaseWhenPointerLeavesCard);
+    window.addEventListener("keydown", releasePreviewSuppression, { once: true });
     try { sessionStorage.removeItem(transitionKey); } catch { /* Nothing else is needed. */ }
   });
 
