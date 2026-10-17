@@ -155,6 +155,8 @@
   if (startup) {
     const skipButton = startup.querySelector("[data-startup-skip]");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isReload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+    if (isReload) startup.classList.add("is-reload");
     const sessionKey = "aikichin-portfolio-started";
     let alreadyStarted = false;
 
@@ -170,8 +172,11 @@
       window.setTimeout(() => startup.remove(), 600);
     };
 
-    if (alreadyStarted || reducedMotion) {
+    if ((alreadyStarted && !isReload) || reducedMotion) {
       startup.remove();
+    } else if (isReload) {
+      skipButton?.addEventListener("click", finishStartup, { once: true });
+      window.setTimeout(finishStartup, 1500);
     } else {
       skipButton?.addEventListener("click", finishStartup, { once: true });
       window.setTimeout(finishStartup, 4000);
