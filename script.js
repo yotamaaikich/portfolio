@@ -27,6 +27,14 @@
     window.setTimeout(() => pageTransition.classList.remove("is-active"), 260);
   }
 
+  // Browsers can restore the previous page from the back-forward cache with
+  // its outgoing overlay still visible. Always clear that stale state on return.
+  window.addEventListener("pageshow", (event) => {
+    if (!event.persisted) return;
+    pageTransition.classList.remove("is-active");
+    try { sessionStorage.removeItem(transitionKey); } catch { /* Nothing else is needed. */ }
+  });
+
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a[href]");
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target || link.hasAttribute("download")) return;
