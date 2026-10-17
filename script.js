@@ -5,7 +5,7 @@
     "TYPE": ["TYPE", "类型"], "TECHNOLOGY": ["TECHNOLOGY", "技术"], "HOSTING": ["HOSTING", "托管平台"], "STATUS": ["STATUS", "状态"], "SHOWCASE": ["SHOWCASE", "展示"], "ROLE": ["ROLE", "形式"],
     "SCHOOL": ["SCHOOL", "学校"], "COURSE": ["COURSE", "专业方向"], "INTERESTS": ["INTERESTS", "兴趣"], "PROJECT INFO": ["PROJECT INFO", "项目信息"], "ENDPOINTS": ["ENDPOINTS", "链接"],
     "プロフィール情報": ["Profile information", "个人资料"], "コマンドを実行": ["Run command", "运行命令"], "IDをコピー": ["Copy ID", "复制 ID"],
-    "ページが見つかりません": ["Page not found", "找不到页面"], "お探しのページは移動または削除された可能性があります。": ["The page may have moved or been removed.", "该页面可能已移动或删除。"], "ホームへ戻る": ["Back home", "返回首页"],
+    "ページが見つかりません": ["Page not found", "找不到页面"], "お探しのページは移動または削除された可能性があります。": ["The page may have moved or been removed.", "该页面可能已移动或删除。"], "ホームへ戻る": ["Back home", "返回首页"], "ページ内を検索": ["Search this portfolio", "搜索此作品集"], "作品名やプロフィールを検索": ["Search projects or profile", "搜索作品或个人资料"], "検索": ["Search", "搜索"], "URLをコピー": ["Copy URL", "复制网址"], "help を入力": ["Type help", "输入 help"],
     "混雑状況、10分後と20分後の予測、今日のメニューをまとめた利用者向け画面の再現図": ["Mockup of the user view with crowd levels, 10- and 20-minute forecasts, and today's menu", "用户界面示意图，包含拥挤情况、10 分钟和 20 分钟后预测及今日菜单"],
     "現在人数、AI人数認識、メニューの販売状況、お知らせ欄をまとめた管理画面の再現図": ["Mockup of the admin view with current count, AI people detection, menu availability, and announcements", "管理界面示意图，包含当前人数、AI 人数识别、菜单销售状态和通知"],
     "東方風シューティングゲームのプレイ画面。黒い画面上にマゼンタ色の弾幕が広がり、下部に自機が表示されている": ["Gameplay from a Touhou-inspired shooter, with magenta bullets on a black field and the player craft near the bottom", "东方风格射击游戏画面：黑色背景上布满洋红色弹幕，玩家机体位于下方"],
@@ -47,7 +47,7 @@
       if (element.closest("[data-no-translate]")) return;
       let attributes = originalAttributes.get(element);
       if (!attributes) { attributes = {}; originalAttributes.set(element, attributes); }
-      for (const attribute of ["aria-label", "alt", "title"]) {
+      for (const attribute of ["aria-label", "alt", "title", "placeholder"]) {
         if (!(attribute in attributes)) attributes[attribute] = element.getAttribute(attribute);
         const original = attributes[attribute];
         if (original && copy[original]) element.setAttribute(attribute, language === "ja" ? original : copy[original][language === "en" ? 0 : 1]);
@@ -300,11 +300,39 @@
     let completionMatches = [];
     let completionIndex = -1;
     let lastCompletion = "";
+    let suppressFocusSuggestions = false;
     const suggestions = document.createElement("div");
     suggestions.className = "terminal-command-suggestions";
     suggestions.setAttribute("aria-live", "polite");
     suggestions.hidden = true;
     terminalForm.insertAdjacentElement("afterend", suggestions);
+    const renderSuggestions = (matches, selected = -1) => {
+      suggestions.replaceChildren();
+      if (!matches.length) {
+        suggestions.hidden = true;
+        return;
+      }
+      matches.forEach((name, index) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.className = "terminal-suggestion-option";
+        option.textContent = name;
+        option.setAttribute("aria-label", `コマンドを入力: ${name}`);
+        if (index === selected) option.setAttribute("aria-current", "true");
+        option.addEventListener("mousedown", (event) => event.preventDefault());
+        option.addEventListener("click", () => {
+          commandInput.value = name;
+          lastCompletion = "";
+          completionMatches = [];
+          completionIndex = -1;
+          suggestions.hidden = true;
+          suppressFocusSuggestions = document.activeElement !== commandInput;
+          commandInput.focus({ preventScroll: true });
+        });
+        suggestions.append(option);
+      });
+      suggestions.hidden = false;
+    };
 
     const showResponse = (command, message) => {
       response.replaceChildren();
@@ -371,6 +399,7 @@
         terminalForm.querySelectorAll("input, button").forEach((control) => { control.disabled = false; });
         hackRunning = false;
         showResponse("", "developer mode simulation complete.");
+        suppressFocusSuggestions = document.activeElement !== commandInput;
         commandInput.focus({ preventScroll: true });
       }, 5200);
     };
@@ -379,7 +408,17 @@
       completionMatches = [];
       completionIndex = -1;
       lastCompletion = "";
-      suggestions.hidden = true;
+      const prefix = commandInput.value.trim().toLowerCase();
+      renderSuggestions(prefix ? commandNames.filter((name) => name.startsWith(prefix)) : []);
+    });
+
+    commandInput.addEventListener("focus", () => {
+      if (suppressFocusSuggestions) {
+        suppressFocusSuggestions = false;
+        return;
+      }
+      const prefix = commandInput.value.trim().toLowerCase();
+      renderSuggestions(prefix ? commandNames.filter((name) => name.startsWith(prefix)) : commandNames);
     });
 
     commandInput.addEventListener("keydown", (event) => {
@@ -399,8 +438,7 @@
         const selected = completionMatches[completionIndex];
         commandInput.value = selected;
         lastCompletion = selected;
-        suggestions.textContent = `TAB COMPLETE  ›  ${completionMatches.map((name, index) => index === completionIndex ? `[${name}]` : name).join("  /  ")}`;
-        suggestions.hidden = false;
+        renderSuggestions(completionMatches, completionIndex);
         return;
       }
 
@@ -449,7 +487,10 @@
           showResponse(command, "Do you want to hack this page? y/n");
         }
         commandInput.value = "";
-        if (!hackRunning) commandInput.focus({ preventScroll: true });
+        if (!hackRunning) {
+          suppressFocusSuggestions = document.activeElement !== commandInput;
+          commandInput.focus({ preventScroll: true });
+        }
         return;
       }
       switch (command) {
@@ -500,6 +541,7 @@
       }
 
       commandInput.value = "";
+      suppressFocusSuggestions = document.activeElement !== commandInput;
       commandInput.focus({ preventScroll: true });
     });
   }
@@ -508,9 +550,59 @@
     element.textContent = new Date().getFullYear();
   });
 
+  const siteSearch = document.querySelector("[data-site-search]");
+  if (siteSearch) {
+    const input = siteSearch.querySelector("input");
+    const results = document.querySelector("[data-site-search-results]");
+    const destinations = [
+      { href: "index.html", labels: ["ホーム", "Home", "首页"], terms: ["home", "トップ", "ホーム"] },
+      { href: "projects.html", labels: ["制作物一覧", "All projects", "作品列表"], terms: ["project", "作品", "制作物", "一覧"] },
+      { href: "project-cafeteria.html", labels: ["食堂混雑状況確認サイト", "Cafeteria crowd monitor", "食堂拥挤情况查询"], terms: ["cafeteria", "食堂", "混雑"] },
+      { href: "project-task-calendar.html", labels: ["課題カレンダー", "Assignment calendar", "作业日历"], terms: ["calendar", "課題", "カレンダー"] },
+      { href: "project-portfolio.html", labels: ["ポートフォリオサイト", "Portfolio website", "作品集网站"], terms: ["portfolio", "ポートフォリオ", "作品集"] },
+      { href: "projects.html#project-turtle-graphics", labels: ["タートルグラフィックス", "Turtle graphics", "海龟绘图"], terms: ["turtle", "タートル", "graphics", "グラフィックス"] },
+      { href: "projects.html#project-touhou-shooter", labels: ["東方風シューティングゲーム", "Touhou-inspired shooter", "东方风格射击游戏"], terms: ["touhou", "東方", "shooter", "シューティング"] },
+      { href: "about.html", labels: ["プロフィール", "Profile", "个人资料"], terms: ["about", "profile", "自己紹介", "プロフィール"] },
+      { href: "contact.html", labels: ["連絡先", "Contact", "联系"], terms: ["contact", "連絡", "連絡先"] }
+    ];
+    const renderSearchResults = () => {
+      const query = input.value.trim().toLocaleLowerCase();
+      results.replaceChildren();
+      if (!query) {
+        results.hidden = true;
+        return;
+      }
+      const matched = destinations.filter((item) => [...item.labels, ...item.terms].some((term) => term.toLocaleLowerCase().includes(query) || query.includes(term.toLocaleLowerCase())));
+      if (!matched.length) {
+        const empty = document.createElement("p");
+        empty.textContent = document.documentElement.lang === "en" ? "No matching page. Try another keyword." : document.documentElement.lang === "zh-CN" ? "没有匹配的页面，请尝试其他关键词。" : "見つかりませんでした。別のキーワードを試してください。";
+        results.append(empty);
+      } else {
+        const languageIndex = document.documentElement.lang === "en" ? 1 : document.documentElement.lang === "zh-CN" ? 2 : 0;
+        matched.forEach((item) => {
+          const link = document.createElement("a");
+          link.className = "site-search-result";
+          link.href = item.href;
+          link.textContent = `${item.labels[languageIndex]}　↗`;
+          results.append(link);
+        });
+      }
+      results.hidden = false;
+    };
+    input.addEventListener("input", renderSearchResults);
+    siteSearch.addEventListener("submit", (event) => {
+      event.preventDefault();
+      renderSearchResults();
+    });
+    languageSelect.addEventListener("change", renderSearchResults);
+  }
+
   document.querySelectorAll("[data-copy-value]").forEach((button) => {
     const status = button.parentElement.querySelector("[data-copy-status]");
-    const getCopyLabel = () => document.documentElement.lang === "en" ? "Copy ID" : document.documentElement.lang === "zh-CN" ? "复制 ID" : "IDをコピー";
+    const getCopyLabel = () => {
+      const kind = button.dataset.copyKind === "url" ? "URL" : "ID";
+      return document.documentElement.lang === "en" ? `Copy ${kind}` : document.documentElement.lang === "zh-CN" ? (kind === "URL" ? "复制网址" : "复制 ID") : (kind === "URL" ? "URLをコピー" : "IDをコピー");
+    };
     let resetTimer;
     button.addEventListener("click", async () => {
       const value = button.dataset.copyValue;
@@ -539,7 +631,8 @@
         copied = fallbackCopy();
       }
       const language = document.documentElement.lang;
-      const messages = language === "en" ? ["Copied!", "Could not copy. Select the ID manually."] : language === "zh-CN" ? ["已复制！", "无法复制，请手动选择 ID。"] : ["コピーしました！", "コピーできません。IDを手動で選択してください。"];
+      const itemName = button.dataset.copyKind === "url" ? "URL" : "ID";
+      const messages = language === "en" ? ["Copied!", `Could not copy ${itemName}. Select it manually.`] : language === "zh-CN" ? ["已复制！", `无法复制${itemName}，请手动选择。`] : ["コピーしました！", `${itemName}をコピーできません。手動で選択してください。`];
       if (status) status.textContent = messages[copied ? 0 : 1];
       button.textContent = copied ? (language === "en" ? "COPIED" : language === "zh-CN" ? "已复制" : "コピー済み") : getCopyLabel();
       window.clearTimeout(resetTimer);

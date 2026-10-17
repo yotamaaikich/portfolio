@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="お探しのページは見つかりませんでした。ポートフォリオのホームまたは制作物一覧へお戻りください。">
   <title>404 — ページが見つかりません — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261018-i18n13">
-  <script src="script.js?v=20261018-i18n13" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261018-i18n14">
+  <script src="script.js?v=20261018-i18n14" defer></script>
 </head>
 <body>
   <div class="startup-screen" id="startup-screen" aria-label="Windows startup animation" data-no-translate>
@@ -33,6 +33,11 @@
       <h1>404<span class="accent">.</span></h1>
       <h2>ページが見つかりません</h2>
       <p>お探しのページは移動または削除された可能性があります。</p>
+      <form class="error-search" data-site-search role="search">
+        <label for="not-found-search">ページ内を検索</label>
+        <div class="error-search-controls"><input id="not-found-search" type="search" autocomplete="off" placeholder="作品名やプロフィールを検索"><button class="button button-primary" type="submit">検索</button></div>
+      </form>
+      <div class="site-search-results" data-site-search-results aria-live="polite" hidden></div>
       <div class="hero-actions"><a class="button button-primary" href="index.html">ホームへ戻る <span aria-hidden="true">↗</span></a><a class="button button-quiet" href="projects.html">制作物を見る <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
