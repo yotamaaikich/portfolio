@@ -4,7 +4,8 @@
     "PROJECT DETAILS": ["PROJECT DETAILS", "项目详情"], "DETAILS": ["DETAILS", "详情"], "OPEN NOTEBOOK": ["OPEN NOTEBOOK", "打开笔记本"],
     "TYPE": ["TYPE", "类型"], "TECHNOLOGY": ["TECHNOLOGY", "技术"], "HOSTING": ["HOSTING", "托管平台"], "STATUS": ["STATUS", "状态"], "SHOWCASE": ["SHOWCASE", "展示"], "ROLE": ["ROLE", "形式"],
     "SCHOOL": ["SCHOOL", "学校"], "COURSE": ["COURSE", "专业方向"], "INTERESTS": ["INTERESTS", "兴趣"], "PROJECT INFO": ["PROJECT INFO", "项目信息"], "ENDPOINTS": ["ENDPOINTS", "链接"],
-    "プロフィール情報": ["Profile information", "个人资料"], "コマンドを実行": ["Run command", "运行命令"],
+    "プロフィール情報": ["Profile information", "个人资料"], "コマンドを実行": ["Run command", "运行命令"], "IDをコピー": ["Copy ID", "复制 ID"],
+    "ページが見つかりません": ["Page not found", "找不到页面"], "お探しのページは移動または削除された可能性があります。": ["The page may have moved or been removed.", "该页面可能已移动或删除。"], "ホームへ戻る": ["Back home", "返回首页"],
     "混雑状況、10分後と20分後の予測、今日のメニューをまとめた利用者向け画面の再現図": ["Mockup of the user view with crowd levels, 10- and 20-minute forecasts, and today's menu", "用户界面示意图，包含拥挤情况、10 分钟和 20 分钟后预测及今日菜单"],
     "現在人数、AI人数認識、メニューの販売状況、お知らせ欄をまとめた管理画面の再現図": ["Mockup of the admin view with current count, AI people detection, menu availability, and announcements", "管理界面示意图，包含当前人数、AI 人数识别、菜单销售状态和通知"],
     "東方風シューティングゲームのプレイ画面。黒い画面上にマゼンタ色の弾幕が広がり、下部に自機が表示されている": ["Gameplay from a Touhou-inspired shooter, with magenta bullets on a black field and the player craft near the bottom", "东方风格射击游戏画面：黑色背景上布满洋红色弹幕，玩家机体位于下方"],
@@ -72,7 +73,8 @@
       "contact.html": ["CONTACT — AIKICHIN PORTFOLIO", "联系 — AIKICHIN 作品集"],
       "project-cafeteria.html": ["CAFETERIA CROWD MONITOR — AIKICHIN PORTFOLIO", "食堂拥挤情况查询 — AIKICHIN 作品集"],
       "project-task-calendar.html": ["ASSIGNMENT CALENDAR — AIKICHIN PORTFOLIO", "作业日历 — AIKICHIN 作品集"],
-      "project-portfolio.html": ["PORTFOLIO SITE — AIKICHIN PORTFOLIO", "作品集网站 — AIKICHIN 作品集"]
+      "project-portfolio.html": ["PORTFOLIO SITE — AIKICHIN PORTFOLIO", "作品集网站 — AIKICHIN 作品集"],
+      "404.html": ["404 — PAGE NOT FOUND — AIKICHIN PORTFOLIO", "404 — 页面未找到 — AIKICHIN 作品集"]
     };
     if (language === "ja") {
       document.title = japaneseTitle;
@@ -291,6 +293,18 @@
     let matrixTimer;
     let hackConfirmationPending = false;
     let hackRunning = false;
+    const commandNames = ["help", "whoami", "ls", "projects", "cafeteria", "calendar", "profile", "about", "contact", "matrix", "to hack", "clear"];
+    const commandHistory = [];
+    let historyIndex = 0;
+    let historyDraft = "";
+    let completionMatches = [];
+    let completionIndex = -1;
+    let lastCompletion = "";
+    const suggestions = document.createElement("div");
+    suggestions.className = "terminal-command-suggestions";
+    suggestions.setAttribute("aria-live", "polite");
+    suggestions.hidden = true;
+    terminalForm.insertAdjacentElement("afterend", suggestions);
 
     const showResponse = (command, message) => {
       response.replaceChildren();
@@ -361,10 +375,66 @@
       }, 5200);
     };
 
+    commandInput.addEventListener("input", () => {
+      completionMatches = [];
+      completionIndex = -1;
+      lastCompletion = "";
+      suggestions.hidden = true;
+    });
+
+    commandInput.addEventListener("keydown", (event) => {
+      if (event.key === "Tab") {
+        const current = commandInput.value.trim().toLowerCase();
+        if (completionMatches.length && current === lastCompletion) {
+          completionIndex = (completionIndex + 1) % completionMatches.length;
+        } else {
+          completionMatches = commandNames.filter((name) => name.startsWith(current));
+          completionIndex = completionMatches.length ? 0 : -1;
+        }
+        if (!completionMatches.length) {
+          suggestions.hidden = true;
+          return;
+        }
+        event.preventDefault();
+        const selected = completionMatches[completionIndex];
+        commandInput.value = selected;
+        lastCompletion = selected;
+        suggestions.textContent = `TAB COMPLETE  ›  ${completionMatches.map((name, index) => index === completionIndex ? `[${name}]` : name).join("  /  ")}`;
+        suggestions.hidden = false;
+        return;
+      }
+
+      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        if (!commandHistory.length) return;
+        event.preventDefault();
+        if (event.key === "ArrowUp") {
+          if (historyIndex === commandHistory.length) historyDraft = commandInput.value;
+          historyIndex = Math.max(0, historyIndex - 1);
+          commandInput.value = commandHistory[historyIndex];
+        } else if (historyIndex < commandHistory.length - 1) {
+          historyIndex += 1;
+          commandInput.value = commandHistory[historyIndex];
+        } else {
+          historyIndex = commandHistory.length;
+          commandInput.value = historyDraft;
+        }
+        suggestions.hidden = true;
+        commandInput.setSelectionRange(commandInput.value.length, commandInput.value.length);
+      }
+    });
+
     terminalForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const command = commandInput.value.trim().toLowerCase();
       if (!command || hackRunning) return;
+      commandHistory.push(commandInput.value.trim());
+      if (commandHistory.length > 30) commandHistory.shift();
+      historyIndex = commandHistory.length;
+      historyDraft = "";
+      completionMatches = [];
+      completionIndex = -1;
+      lastCompletion = "";
+      suggestions.hidden = true;
 
       terminalCard.classList.remove("is-matrix");
       if (hackConfirmationPending) {
@@ -384,7 +454,7 @@
       }
       switch (command) {
         case "help":
-          showResponse(command, "commands: whoami / ls / projects / cafeteria / calendar / profile / contact / matrix / clear");
+          showResponse(command, "commands: whoami / ls / projects / cafeteria / calendar / profile / contact / matrix / to hack / clear  |  Tab: complete / ↑↓: history");
           break;
         case "whoami":
           showResponse(command, "@yotamaaikich — student developer");
@@ -436,5 +506,47 @@
 
   document.querySelectorAll("[data-year]").forEach((element) => {
     element.textContent = new Date().getFullYear();
+  });
+
+  document.querySelectorAll("[data-copy-value]").forEach((button) => {
+    const status = button.parentElement.querySelector("[data-copy-status]");
+    const getCopyLabel = () => document.documentElement.lang === "en" ? "Copy ID" : document.documentElement.lang === "zh-CN" ? "复制 ID" : "IDをコピー";
+    let resetTimer;
+    button.addEventListener("click", async () => {
+      const value = button.dataset.copyValue;
+      let copied = false;
+      const fallbackCopy = () => {
+        const field = document.createElement("textarea");
+        field.value = value;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.append(field);
+        field.select();
+        let result = false;
+        try { result = document.execCommand("copy"); } catch { result = false; }
+        field.remove();
+        return result;
+      };
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(value);
+          copied = true;
+        } else {
+          copied = fallbackCopy();
+        }
+      } catch {
+        copied = fallbackCopy();
+      }
+      const language = document.documentElement.lang;
+      const messages = language === "en" ? ["Copied!", "Could not copy. Select the ID manually."] : language === "zh-CN" ? ["已复制！", "无法复制，请手动选择 ID。"] : ["コピーしました！", "コピーできません。IDを手動で選択してください。"];
+      if (status) status.textContent = messages[copied ? 0 : 1];
+      button.textContent = copied ? (language === "en" ? "COPIED" : language === "zh-CN" ? "已复制" : "コピー済み") : getCopyLabel();
+      window.clearTimeout(resetTimer);
+      resetTimer = window.setTimeout(() => {
+        button.textContent = getCopyLabel();
+        if (status) status.textContent = "";
+      }, 2200);
+    });
   });
 })();
