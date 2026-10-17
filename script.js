@@ -110,14 +110,6 @@
   pageTransition.className = "page-transition";
   pageTransition.setAttribute("aria-hidden", "true");
   pageTransition.innerHTML = '<div class="page-transition-window"><div class="page-transition-titlebar"><span>AIKICHIN PORTFOLIO</span><span aria-hidden="true">▰</span></div><div class="page-transition-content"><span class="page-transition-mark" aria-hidden="true">▣</span><div><strong>Loading page...</strong><span>PLEASE WAIT / SYSTEM READY</span></div></div><div class="page-transition-progress"><span></span></div></div>';
-  const transitionCopy = { ja: ["ページを開いています…", "しばらくお待ちください"], en: ["Loading page...", "PLEASE WAIT / SYSTEM READY"], zh: ["正在加载页面…", "请稍候 / 系统就绪"] };
-  const updateTransitionLanguage = () => {
-    const activeTransitionCopy = transitionCopy[languageSelect.value] || transitionCopy.ja;
-    pageTransition.querySelector("strong").textContent = activeTransitionCopy[0];
-    pageTransition.querySelector(".page-transition-content div span").textContent = activeTransitionCopy[1];
-  };
-  updateTransitionLanguage();
-  languageSelect.addEventListener("change", updateTransitionLanguage);
   document.body.append(pageTransition);
 
   const showPageTransition = () => pageTransition.classList.add("is-active");
