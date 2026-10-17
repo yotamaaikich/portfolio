@@ -207,6 +207,15 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .history-content h3 { margin: -.15rem 0 .35rem; font-size: 1rem; }
 .history-content p { margin: 0; color: var(--muted); font-size: .88rem; }
 .preview-caption { margin: .7rem 0 0; color: var(--dim); font-size: .75rem; text-align: right; }
+.cafeteria-screens > p:not(.eyebrow) { color: var(--muted); }
+.cafeteria-figure { margin: 1.25rem 0 1.75rem; }
+.cafeteria-figure a { display: block; overflow: hidden; border: 1px solid var(--line-bright); background: #111a2b; }
+.cafeteria-figure img { display: block; width: 100%; height: auto; transition: transform .25s ease; }
+.cafeteria-figure a:hover img { transform: scale(1.015); }
+.public-figure img { max-width: 640px; margin-inline: auto; }
+.admin-figure img { max-width: 960px; margin-inline: auto; }
+.cafeteria-figure figcaption { margin-top: .55rem; color: var(--dim); font-size: .75rem; }
+.cafeteria-image-note { padding: .8rem 1rem; border-left: 2px solid var(--green); background: var(--panel); font-size: .78rem !important; }
 .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 3rem; }.contact-message p:not(.eyebrow) { color: var(--muted); }.contact-links { border-top: 1px solid var(--line); }.contact-link-row { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: .9rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }.contact-icon { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line-bright); color: var(--green); font: .7rem var(--mono); }.contact-link-row h3 { margin: 0; }.contact-link-row p { margin: .2rem 0 0; color: var(--muted); font-size: .8rem; }.contact-action-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--green); font: .72rem var(--mono); white-space: nowrap; }.contact-action-link:hover { color: var(--green-soft); text-decoration: underline; text-underline-offset: .2em; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
