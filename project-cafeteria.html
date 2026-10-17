@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="JavaScriptとSupabaseを使った食堂混雑状況確認サイトの制作記録です。">
   <title>CAFETERIA MONITOR — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261018-7">
+  <link rel="stylesheet" href="style.css?v=20261018-10">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,11 +23,13 @@
     <section class="section-wrap detail-layout section-block">
       <div class="detail-main">
         <section class="content-section cafeteria-screens" aria-labelledby="cafeteria-screens-title">
-          <p class="eyebrow">01 / ACTUAL SCREENS</p><h2 id="cafeteria-screens-title">実際の画面</h2>
-          <p>利用者向けの混雑状況ページと、情報を更新する管理画面です。</p>
-          <figure class="cafeteria-figure public-figure"><a href="images/cafeteria-live.png" target="_blank" rel="noopener noreferrer"><img src="images/cafeteria-live.png" alt="食堂の混雑状況、10分後と20分後の予測、本日のメニュー、お知らせを表示する利用者向け画面"></a><figcaption>利用者向け：混雑状況・予測・メニュー・お知らせ</figcaption></figure>
-          <figure class="cafeteria-figure admin-figure"><a href="images/cafeteria-admin.png" target="_blank" rel="noopener noreferrer"><img src="images/cafeteria-admin.png" alt="現在人数、AI人数認識、販売状況、お知らせ編集と保存操作を表示する管理画面"></a><figcaption>管理者向け：人数確認、販売状況とお知らせの更新</figcaption></figure>
-          <p class="cafeteria-image-note">開発中の画面です。表示されている人数・メニュー・お知らせは撮影時のデータで、実際の食堂の稼働状況を示すものではありません。</p>
+          <p class="eyebrow">01 / SCREEN OVERVIEW</p><h2 id="cafeteria-screens-title">画面イメージ</h2>
+          <p>ポートフォリオの配色に合わせ、利用者向けと管理者向けの機能をコンパクトにまとめました。</p>
+          <div class="cafeteria-diagram-grid">
+            <figure class="cafeteria-figure"><img src="images/cafeteria-user.svg" alt="混雑状況、10分後と20分後の予測、今日のメニューをまとめた利用者向け画面の再現図"><figcaption><strong>利用者向け</strong><span>混雑状況・予測・メニュー</span></figcaption></figure>
+            <figure class="cafeteria-figure"><img src="images/cafeteria-admin.svg" alt="現在人数、AI人数認識、メニューの販売状況、お知らせ欄をまとめた管理画面の再現図"><figcaption><strong>管理者向け</strong><span>人数確認・メニュー・お知らせ管理</span></figcaption></figure>
+          </div>
+          <p class="cafeteria-image-note">実際の機能構成をもとにしたSVG再現図です。人数や表示内容はレイアウト例です。</p>
         </section>
         <section class="content-section"><p class="eyebrow">02 / OVERVIEW</p><h2>概要</h2><p>食堂の混雑状況を利用者が確認できるようにするWebアプリです。利用者向けページでは現在の混雑度や少し先の予測、メニュー、お知らせを表示します。</p></section>
         <section class="content-section"><p class="eyebrow">03 / DEVELOPMENT</p><h2>取り組んでいること</h2><ul class="feature-list"><li>混雑状況と10分後・20分後の予測を伝える画面づくり</li><li>現在人数とAI人数認識の結果を管理画面で確認</li><li>メニューの販売状況やお知らせを管理画面から更新</li><li>JavaScriptとSupabaseを使ったデータ連携</li></ul></section>

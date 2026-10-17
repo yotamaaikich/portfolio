@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460" role="img" aria-labelledby="title desc">
+  <title id="title">食堂混雑状況の管理画面イメージ</title>
+  <desc id="desc">現在人数とAI人数認識、メニュー販売状況、お知らせを管理する画面の再現図。</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#263629" stroke-width="1"/></pattern>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#72f58a"/><stop offset="1" stop-color="#38b86b"/></linearGradient>
+  </defs>
+  <rect width="760" height="460" rx="16" fill="#101510"/><rect width="760" height="460" rx="16" fill="url(#grid)"/>
+  <rect x="20" y="18" width="720" height="38" rx="6" fill="#151e16" stroke="#36513a"/>
+  <circle cx="39" cy="37" r="5" fill="#e98269"/><circle cx="57" cy="37" r="5" fill="#e3c66b"/><circle cx="75" cy="37" r="5" fill="url(#green)"/>
+  <text x="96" y="41" fill="#b6c9b5" font-family="monospace" font-size="13">CAFETERIA / CONTROL PANEL</text><text x="620" y="41" fill="#72f58a" font-family="monospace" font-size="12">ADMIN MODE</text>
+  <text x="36" y="93" fill="#72f58a" font-family="monospace" font-size="13" letter-spacing="2">02 / ADMIN VIEW</text><text x="36" y="132" fill="#f1f5ef" font-family="sans-serif" font-size="28" font-weight="700">管理者画面</text>
+  <rect x="35" y="151" width="205" height="99" rx="9" fill="#151e16" stroke="#304432"/><text x="54" y="181" fill="#b6c9b5" font-family="sans-serif" font-size="15">現在人数</text><text x="54" y="225" fill="#72f58a" font-family="sans-serif" font-size="34" font-weight="700">0人</text>
+  <rect x="256" y="151" width="469" height="99" rx="9" fill="#151e16" stroke="#304432"/><text x="275" y="181" fill="#b6c9b5" font-family="sans-serif" font-size="15">AI人数認識</text><rect x="275" y="192" width="431" height="39" rx="5" fill="#0b100c" stroke="#263629"/><path d="M465 207h22l8 8v10h-30zM471 207v-5a5 5 0 0 1 10 0v5" fill="none" stroke="#72f58a" stroke-width="2"/><text x="514" y="218" fill="#8b9d89" font-family="monospace" font-size="12">CAMERA / COUNT 0</text>
+  <text x="36" y="283" fill="#72f58a" font-family="monospace" font-size="12">MENU STATUS</text>
+  <rect x="35" y="297" width="690" height="35" rx="5" fill="#151e16" stroke="#304432"/><text x="52" y="320" fill="#e7eee5" font-family="sans-serif" font-size="14">カレーライス</text><rect x="629" y="305" width="78" height="20" rx="10" fill="#1d5830"/><text x="642" y="319" fill="#8dffa0" font-family="sans-serif" font-size="11">販売中</text>
+  <rect x="35" y="338" width="690" height="35" rx="5" fill="#151e16" stroke="#304432"/><text x="52" y="361" fill="#e7eee5" font-family="sans-serif" font-size="14">ラーメン</text><rect x="629" y="346" width="78" height="20" rx="10" fill="#1d5830"/><text x="642" y="360" fill="#8dffa0" font-family="sans-serif" font-size="11">販売中</text>
+  <rect x="35" y="379" width="690" height="48" rx="6" fill="#151e16" stroke="#304432"/><text x="52" y="399" fill="#72f58a" font-family="monospace" font-size="11">ANNOUNCEMENT</text><text x="52" y="418" fill="#c9d5c8" font-family="sans-serif" font-size="13">12:30〜13:00は混雑が予想されます</text><rect x="625" y="389" width="82" height="28" rx="5" fill="url(#green)"/><text x="642" y="408" fill="#101510" font-family="sans-serif" font-size="12" font-weight="700">保存</text>
+</svg>
