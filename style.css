@@ -69,12 +69,13 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .terminal-list li::before { content: "↳ "; color: var(--green); }
 .terminal-list a { color: var(--green-soft); text-decoration: underline; text-decoration-color: var(--line-bright); text-underline-offset: .2em; }
 .terminal-list a:hover { color: var(--green); text-decoration-color: var(--green); }
-.terminal-command { display: flex; align-items: center; gap: .25rem; min-width: 0; margin: 0; color: var(--green); white-space: nowrap; }
-.terminal-input { flex: 1; width: 1ch; min-width: 0; padding: .2rem 0; border: 0; border-radius: 0; outline: 0; background: transparent; color: var(--text); font: inherit; caret-color: var(--green); }
+.terminal-command { display: flex; align-items: center; gap: .55rem; min-width: 0; margin: 0; padding: .4rem .55rem; border: 1px solid var(--line-bright); background: #101510; color: var(--green); white-space: nowrap; transition: border-color .18s ease, box-shadow .18s ease; }
+.terminal-command:focus-within { border-color: var(--green); box-shadow: 0 0 0 2px #72f58a18; }
+.terminal-command-prompt { flex: 0 0 auto; }
+.terminal-input { flex: 1; width: 1ch; min-width: 0; padding: .15rem 0; border: 0; border-radius: 0; outline: 0; background: transparent; color: var(--text); font: inherit; caret-color: var(--green); }
 .terminal-input::placeholder { color: var(--dim); opacity: 1; }
-.terminal-input:focus-visible { outline: 1px solid var(--line-bright); outline-offset: 2px; }
-.terminal-submit { flex: 0 0 auto; padding: .1rem .35rem; border: 1px solid var(--line); background: transparent; color: var(--green); font: inherit; cursor: pointer; }
-.terminal-submit:hover { border-color: var(--green); background: #72f58a16; }
+.terminal-submit { flex: 0 0 auto; min-width: 1.7rem; padding: .1rem .3rem; border: 0; border-left: 1px solid var(--line); background: transparent; color: var(--green); font: inherit; cursor: pointer; }
+.terminal-submit:hover { color: var(--text); background: #72f58a16; }
 .terminal-command-hint { margin: .45rem 0 0; color: var(--dim); font-size: .58rem; }
 .terminal-response { margin-top: .55rem; color: var(--green-soft); font-size: .68rem; }
 .terminal-response p { margin: .2rem 0; }
