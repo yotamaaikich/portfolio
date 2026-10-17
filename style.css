@@ -164,7 +164,7 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .calendar-dates .selected { color: var(--bg); background: var(--green); }
 .task-line { display: flex; align-items: center; gap: .5rem; border-top: 1px solid var(--line); margin-top: .8rem; padding-top: .8rem; font-size: .7rem; }.task-line span { width: 6px; height: 6px; background: var(--green); }.task-line small { margin-left: auto; color: var(--dim); }
 .project-card-body { padding: 1.2rem; }
-.card-title-row { display: flex; align-items: start; justify-content: space-between; gap: .8rem; }.card-title-row h2, .card-title-row h3 { margin-bottom: .5rem; }.card-arrow { color: var(--green); }
+.card-title-row { display: flex; align-items: start; justify-content: space-between; gap: .8rem; }.card-title-row h2, .card-title-row h3 { margin-bottom: .5rem; }
 .project-card-body > p { color: var(--muted); font-size: .88rem; min-height: 3.2em; }
 .project-card-body > .notebook-file { min-height: 0; margin: -.65rem 0 .65rem; color: var(--dim); font: .65rem var(--mono); }
 .tag-row { display: flex; flex-wrap: wrap; gap: .45rem; margin: .9rem 0; }
