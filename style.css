@@ -106,6 +106,7 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .visual-calendar { background-color: #171b17; background-image: radial-gradient(#4d624d 1px, transparent 1px); background-size: 15px 15px; }
 .visual-colab { padding: 0; background: #e5ffe2; }
 .coursework-art { display: block; width: 100%; height: auto; min-height: 260px; object-fit: cover; }
+.gameplay-art { display: block; width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #050505; }
 .classwork-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
 .classwork-section .section-heading { margin-bottom: 1rem; }
 .mini-window { width: min(100%, 320px); padding: .9rem; border: 1px solid #5d785f; background: #101510; box-shadow: 7px 7px 0 #72f58a13; font-family: var(--mono); }
@@ -193,7 +194,8 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .app-flow-screen .toggle-knob { fill: var(--bg); }
 .app-flow-caption { margin: .9rem 0 0; color: var(--dim); font-size: .72rem; text-align: right; }
 .side-panel { border: 1px solid var(--line); padding: 1rem; margin-bottom: 1rem; background: var(--panel); }.side-panel dl { margin: 0; }.side-panel dt { color: var(--dim); font: .65rem var(--mono); margin-top: 1rem; }.side-panel dd { margin: .2rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }.status-inline { display: inline-flex; align-items: center; gap: .4rem; }.status-inline i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }.small-muted { color: var(--muted); font-size: .8rem; }.next-project { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.5rem; padding-bottom: 3rem; border-top: 1px solid var(--line); color: var(--green); font-size: .8rem; }
-.about-page-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }.about-avatar { min-height: 270px; display: grid; place-items: center; border: 1px solid var(--line-bright); background: var(--panel); padding: 1rem; }.about-avatar img { display: block; width: min(100%, 240px); aspect-ratio: 1; object-fit: cover; border: 1px solid var(--line-bright); }.about-prose p:not(.eyebrow) { color: var(--muted); }.interest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }.interest-card { border: 1px solid var(--line); background: var(--panel); padding: 1.2rem; }.interest-index { color: var(--green); font: .7rem var(--mono); }.interest-card h3 { margin-top: 1.5rem; }.interest-card p { color: var(--muted); font-size: .84rem; margin-bottom: 0; }.skill-list { border-top: 1px solid var(--line); }.skill-list > div { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }.skill-list > div > span:first-child { font: .82rem var(--mono); }.skill-level { color: var(--dim); font-size: .8rem; }
+.about-page-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }.about-avatar { min-height: 270px; display: grid; place-items: center; border: 1px solid var(--line-bright); background: var(--panel); padding: 1rem; }.about-avatar img { display: block; width: min(100%, 240px); aspect-ratio: 1; object-fit: cover; border: 1px solid var(--line-bright); }.about-prose p:not(.eyebrow) { color: var(--muted); }.about-prose .profile-school { color: var(--green); font-weight: 700; }.interest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }.interest-card { border: 1px solid var(--line); background: var(--panel); padding: 1.2rem; }.interest-index { color: var(--green); font: .7rem var(--mono); }.interest-card h3 { margin-top: 1.5rem; }.interest-card p { color: var(--muted); font-size: .84rem; margin-bottom: 0; }.skills-intro { color: var(--muted); font-size: .86rem; }
+.skill-list { border-top: 1px solid var(--line); }.skill-list > div { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }.skill-list > div > span:first-child { font: .82rem var(--mono); }.skill-level { color: var(--dim); font-size: .8rem; }
 .history-list, ol.history-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line-bright); }
 .history-entry { position: relative; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 1.5rem; min-width: 0; padding: 0 0 2rem 1.7rem; }
 .history-entry:last-child { padding-bottom: 0; }
@@ -230,6 +232,7 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
   .history-entry { grid-template-columns: 82px minmax(0, 1fr); gap: .8rem; padding-left: 1.2rem; }
 }
 @media (max-width: 560px) {
+  .skill-list > div { flex-direction: column; gap: .25rem; }
   .cafeteria-diagram-grid { grid-template-columns: 1fr; }
   .app-flow-grid { grid-template-columns: 1fr; }
   .section-wrap { padding-inline: 18px; }
