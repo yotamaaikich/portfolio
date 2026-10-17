@@ -258,7 +258,7 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 
 
 /* First-visit retro startup screen */
-.startup-screen { animation: startup-autodismiss 3.2s linear 1 forwards; position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 1rem; background: radial-gradient(ellipse at center, #142b56 0%, #09152e 62%, #050a16 100%); color: #16191f; font-family: Tahoma, Arial, sans-serif; opacity: 1; transition: opacity .55s ease, visibility .55s ease; }
+.startup-screen { animation: startup-autodismiss 4.7s linear 1 forwards; position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: 1rem; background: radial-gradient(ellipse at center, #142b56 0%, #09152e 62%, #050a16 100%); color: #16191f; font-family: Tahoma, Arial, sans-serif; opacity: 1; transition: opacity .55s ease, visibility .55s ease; }
 .startup-screen::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .16; background: repeating-linear-gradient(to bottom, transparent 0 3px, #071020 4px); }
 .startup-screen.is-finished { animation: none; opacity: 0; visibility: hidden; }
 @keyframes startup-autodismiss { 0%, 80% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; pointer-events: none; } }

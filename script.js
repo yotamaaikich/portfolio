@@ -22,7 +22,7 @@
       startup.remove();
     } else {
       skipButton?.addEventListener("click", finishStartup, { once: true });
-      window.setTimeout(finishStartup, 2500);
+      window.setTimeout(finishStartup, 4000);
     }
   }
 
