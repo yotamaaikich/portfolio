@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Danmaku shooting game concept</title>
+  <desc id="desc">An original shooting-game scene with a vermilion moon, shrine gate, and a patterned field of glowing bullets.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffaf1"/><stop offset="1" stop-color="#f3e4da"/></linearGradient>
+    <radialGradient id="moon"><stop stop-color="#fff1d8"/><stop offset=".75" stop-color="#efb7a2"/><stop offset="1" stop-color="#bd4650"/></radialGradient>
+    <pattern id="paper-grain" width="80" height="80" patternUnits="userSpaceOnUse"><circle cx="8" cy="14" r="1" fill="#c98e80" opacity=".18"/><circle cx="53" cy="61" r="1" fill="#c98e80" opacity=".14"/></pattern>
+  </defs>
+  <rect width="1200" height="620" fill="url(#paper)"/><rect width="1200" height="620" fill="url(#paper-grain)"/>
+  <g fill="none" stroke="#70252d" stroke-width="3" opacity=".82">
+    <path d="M18 80V18h62M1120 18h62v62M18 540v62h62M1120 602h62v-62"/>
+    <path d="M28 92V28h64M1108 28h64v64M28 528v64h64M1108 592h64v-64" stroke-width="1.5"/>
+    <path d="M18 45h28v28M1182 45h-28v28M18 575h28v-28M1182 575h-28v-28"/>
+  </g>
+  <g transform="translate(845 0)">
+    <circle cx="140" cy="265" r="174" fill="url(#moon)" opacity=".92"/>
+    <g fill="#70252d" opacity=".9">
+      <path d="M-20 300 116 255l147 45-18 16H-2z"/><path d="M-3 318h250v19H-3z"/>
+      <path d="M25 332h21v151H25zM200 332h21v151h-21z"/>
+      <path d="M-24 472h292v22H-24zM-44 492h332v20H-44z"/>
+      <path d="M8 270 140 222l145 48-6 17H2z"/>
+    </g>
+    <path d="M140 222v-32M129 190h22" stroke="#70252d" stroke-width="8"/>
+    <g fill="#a82d42" stroke="#fffaf1" stroke-width="3">
+      <circle cx="30" cy="116" r="9"/><circle cx="78" cy="90" r="8"/><circle cx="118" cy="74" r="9"/><circle cx="165" cy="69" r="8"/><circle cx="211" cy="84" r="9"/><circle cx="250" cy="112" r="8"/>
+      <circle cx="-4" cy="170" r="8"/><circle cx="42" cy="156" r="9"/><circle cx="88" cy="145" r="7"/><circle cx="136" cy="139" r="9"/><circle cx="183" cy="145" r="7"/><circle cx="228" cy="157" r="9"/><circle cx="276" cy="174" r="8"/>
+      <circle cx="15" cy="218" r="8"/><circle cx="65" cy="207" r="7"/><circle cx="214" cy="212" r="8"/><circle cx="269" cy="228" r="7"/>
+    </g>
+    <g fill="#d19a43" stroke="#fffaf1" stroke-width="2">
+      <circle cx="52" cy="186" r="6"/><circle cx="99" cy="177" r="6"/><circle cx="173" cy="177" r="6"/><circle cx="238" cy="196" r="6"/>
+      <circle cx="33" cy="246" r="6"/><circle cx="82" cy="238" r="6"/><circle cx="195" cy="239" r="6"/><circle cx="246" cy="252" r="6"/>
+    </g>
+    <g fill="#70252d" opacity=".8"><path d="M140 376 122 413h36z"/><circle cx="140" cy="402" r="13"/><path d="M106 453q34-41 68 0l-8 25h-52z"/><path d="M116 424h48v15h-48z"/></g>
+  </g>
+  <g font-family="Arial, 'Noto Sans JP', sans-serif" fill="#641f2a">
+    <text x="100" y="178" font-family="monospace" font-size="22" letter-spacing="5" fill="#a83a46">CLASSWORK / 02</text>
+    <text x="95" y="300" font-size="80" font-weight="700" letter-spacing="2">弾幕を避けろ。</text>
+    <text x="102" y="370" font-family="monospace" font-size="30" font-weight="700" letter-spacing="4">DANMAKU SHOOTING</text>
+    <path d="M102 398h460" stroke="#a83a46" stroke-width="3"/>
+    <text x="102" y="452" font-size="25" fill="#7f4c4e">東方風シューティングゲーム</text>
+    <text x="102" y="493" font-size="21" fill="#936d67">コードでキャラクターと弾の動きを組み立てる。</text>
+  </g>
+  <g fill="#a83a46"><circle cx="593" cy="173" r="7"/><circle cx="620" cy="205" r="5"/><circle cx="583" cy="235" r="6"/><circle cx="626" cy="266" r="8"/><circle cx="590" cy="296" r="5"/><circle cx="640" cy="335" r="6"/><circle cx="602" cy="375" r="8"/></g>
+</svg>
