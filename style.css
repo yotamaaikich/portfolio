@@ -218,6 +218,10 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 @media (max-width: 780px) {
   .app-flow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-header { flex-wrap: wrap; gap: .8rem; }
+  .site-header > .brand { order: 1; }
+  .site-header > .language-switch { order: 2; margin-left: auto; }
+  .site-header > .menu-toggle { order: 3; }
+  .site-header > .site-nav { order: 4; }
   .menu-toggle { display: inline-flex; align-items: center; gap: .5rem; padding: .55rem .7rem; color: var(--green); background: transparent; border: 1px solid var(--line-bright); font: .7rem var(--mono); }
   .site-nav { display: none; flex: 0 0 100%; flex-wrap: wrap; gap: .7rem 1.2rem; padding: .5rem 0 .2rem; }
   .site-nav.is-open { display: flex; }
@@ -306,3 +310,5 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .page-transition-progress span { display: block; width: 30%; height: 100%; background: repeating-linear-gradient(90deg, #174d24 0 10px, #72f58a 10px 14px); animation: page-transition-progress .7s steps(5, end) infinite; }
 @keyframes page-transition-progress { from { transform: translateX(-120%); } to { transform: translateX(360%); } }
 @media (prefers-reduced-motion: reduce) { .page-transition, .page-transition-window { transition-duration: .01ms; }.page-transition-progress span { animation-duration: .01ms; } }
+.language-switch { min-height: 34px; padding: .35rem 1.7rem .35rem .55rem; border: 1px solid var(--line-bright); border-radius: 0; background: var(--panel); color: var(--green); font: 500 .66rem var(--mono); cursor: pointer; }
+.language-switch:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
