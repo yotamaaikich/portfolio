@@ -144,6 +144,8 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .project-console-toggle:hover, .project-console-toggle:focus-visible { border-color: var(--green); background: #72f58a12; }
 .visual-cafeteria { background-color: #111a12; background-image: linear-gradient(#26362855 1px, transparent 1px), linear-gradient(90deg, #26362855 1px, transparent 1px); background-size: 24px 24px; }
 .visual-calendar { background-color: #171b17; background-image: radial-gradient(#4d624d 1px, transparent 1px); background-size: 15px 15px; }
+.visual-notification-calendar { padding: 0; background: #101510; }
+.notification-calendar-art { display: block; width: 100%; height: auto; }
 .visual-colab { padding: 0; background: #e5ffe2; }
 .coursework-art { display: block; width: 100%; height: auto; min-height: 260px; object-fit: cover; }
 .gameplay-art { display: block; width: 100%; height: auto; max-height: 320px; object-fit: contain; background: #050505; }
@@ -190,6 +192,9 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .page-hero { padding-top: clamp(3rem, 7vw, 5.5rem); padding-bottom: 2rem; border-bottom: 1px solid var(--line); }.page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); }.page-hero > p:not(.eyebrow) { color: var(--muted); max-width: 42rem; }.page-meta { justify-content: space-between; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid var(--line); }
 .callout { display: flex; gap: .9rem; padding: 1rem; margin-top: 2rem; border: 1px solid var(--line); background: #151d16; }.callout-mark { display: grid; place-items: center; flex: 0 0 28px; height: 28px; color: var(--bg); background: var(--green); font: 600 .9rem var(--mono); }.callout p { color: var(--muted); margin: 0; font-size: .85rem; }.callout strong { color: var(--text); }
 .detail-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 2.5rem; align-items: start; }.detail-preview { min-height: 300px; display: grid; place-items: center; padding: 2rem; border: 1px solid var(--line); }.detail-preview .mini-window { width: min(100%, 440px); }.detail-preview .calendar-ui { width: min(100%, 440px); }.content-section { padding: 2.5rem 0; border-bottom: 1px solid var(--line); }.content-section h2 { font-size: 1.6rem; }.content-section p:not(.eyebrow) { color: var(--muted); }.feature-list { padding-left: 1.2rem; color: var(--muted); }.feature-list li { padding: .3rem 0; }.feature-list li::marker { color: var(--green); }.placeholder-note { padding-left: .8rem; border-left: 2px solid var(--line-bright); color: var(--dim) !important; font-size: .82rem; }
+.notification-calendar-showcase { padding-bottom: 0; }
+.notification-calendar-preview { min-height: 0; padding: 0; overflow: hidden; background: #101510; }
+.notification-calendar-preview img { display: block; width: 100%; height: auto; }
 .app-flow-section { border-top: 1px solid var(--line); }
 .app-flow-intro { max-width: 46rem; margin: -.3rem 0 1.4rem; color: var(--muted); }
 .app-flow-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }

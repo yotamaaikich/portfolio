@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Notification Calendar — Windows app screen</title>
+  <desc id="desc">A Windows desktop calendar with a December 2026 month view, a panel for turning Teams and Chrome notifications into event candidates, and a list of saved plans.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#273229" stroke-width="1"/></pattern>
+    <style>
+      .mono{font-family:Consolas,'Courier New',monospace}.sans{font-family:'Segoe UI','Yu Gothic UI',sans-serif}
+      .main{fill:#101510}.panel{fill:#1b241c;stroke:#344334;stroke-width:1}.cell{fill:#141b15;stroke:#344334;stroke-width:1}
+      .muted{fill:#8aa08c}.bright{fill:#e5ede5}.green{fill:#72f58a}.small{font-size:10px}.tiny{font-size:8px}.copy{font-size:11px}
+    </style>
+  </defs>
+  <rect class="main" width="1400" height="1024"/><rect width="1400" height="1024" fill="url(#grid)" opacity=".65"/>
+  <g class="mono">
+    <rect x="24" y="20" width="42" height="42" fill="#101510" stroke="#536953"/>
+    <rect x="36" y="32" width="16" height="16" fill="none" stroke="#72f58a" stroke-width="2"/><rect x="41" y="37" width="6" height="6" fill="#72f58a"/>
+    <text x="78" y="36" fill="#e5ede5" font-size="13" font-weight="700" letter-spacing=".7">NOTIFICATION CALENDAR</text>
+    <text x="78" y="52" class="muted tiny" letter-spacing="1.4">PERSONAL PLANNER / LOCAL</text>
+    <circle cx="1034" cy="41" r="3" class="green"/><text x="1043" y="45" class="green tiny" font-weight="700" letter-spacing=".5">NOTIFICATION LISTENER ACTIVE</text>
+    <text x="1230" y="45" class="muted tiny" letter-spacing="1">LOCAL ONLY</text>
+    <rect x="1304" y="26" width="70" height="32" fill="#141b15" stroke="#536953"/><text x="1325" y="46" class="green small">今日へ</text>
+  </g>
+  <path d="M24 78H1376" stroke="#344334"/>
+
+  <rect class="panel" x="24" y="98" width="900" height="696" rx="2"/>
+  <g class="mono">
+    <text x="44" y="138" class="green" font-size="20" font-weight="700">2026年 12月</text>
+    <rect x="750" y="116" width="103" height="32" fill="#141b15" stroke="#536953"/><text x="765" y="136" class="bright tiny">すべて削除</text>
+    <rect x="862" y="116" width="32" height="32" fill="#141b15" stroke="#536953"/><text x="874" y="137" class="bright">‹</text>
+    <rect x="902" y="116" width="32" height="32" fill="#141b15" stroke="#536953"/><text x="914" y="137" class="bright">›</text>
+  </g>
+  <g class="sans" font-size="11" text-anchor="middle">
+    <text x="91" y="181" fill="#d68073">日</text><text x="216" y="181" class="muted">月</text><text x="341" y="181" class="muted">火</text><text x="466" y="181" class="muted">水</text><text x="591" y="181" class="muted">木</text><text x="716" y="181" class="muted">金</text><text x="841" y="181" class="muted">土</text>
+  </g>
+  <g>
+    <rect class="cell" x="44" y="194" width="125" height="111"/><rect class="cell" x="169" y="194" width="125" height="111"/><rect class="cell" x="294" y="194" width="125" height="111"/><rect class="cell" x="419" y="194" width="125" height="111"/><rect class="cell" x="544" y="194" width="125" height="111"/><rect class="cell" x="669" y="194" width="125" height="111"/><rect class="cell" x="794" y="194" width="125" height="111"/>
+    <rect class="cell" x="44" y="305" width="125" height="111"/><rect class="cell" x="169" y="305" width="125" height="111"/><rect class="cell" x="294" y="305" width="125" height="111"/><rect class="cell" x="419" y="305" width="125" height="111"/><rect class="cell" x="544" y="305" width="125" height="111"/><rect class="cell" x="669" y="305" width="125" height="111"/><rect class="cell" x="794" y="305" width="125" height="111"/>
+    <rect class="cell" x="44" y="416" width="125" height="111"/><rect class="cell" x="169" y="416" width="125" height="111"/><rect class="cell" x="294" y="416" width="125" height="111"/><rect class="cell" x="419" y="416" width="125" height="111"/><rect class="cell" x="544" y="416" width="125" height="111"/><rect class="cell" x="669" y="416" width="125" height="111"/><rect class="cell" x="794" y="416" width="125" height="111"/>
+    <rect class="cell" x="44" y="527" width="125" height="111"/><rect class="cell" x="169" y="527" width="125" height="111"/><rect class="cell" x="294" y="527" width="125" height="111"/><rect class="cell" x="419" y="527" width="125" height="111"/><rect class="cell" x="544" y="527" width="125" height="111"/><rect class="cell" x="669" y="527" width="125" height="111"/><rect class="cell" x="794" y="527" width="125" height="111"/>
+    <rect class="cell" x="44" y="638" width="125" height="111"/><rect class="cell" x="169" y="638" width="125" height="111"/><rect class="cell" x="294" y="638" width="125" height="111"/><rect class="cell" x="419" y="638" width="125" height="111"/><rect class="cell" x="544" y="638" width="125" height="111"/><rect class="cell" x="669" y="638" width="125" height="111"/><rect class="cell" x="794" y="638" width="125" height="111"/>
+  </g>
+  <g class="mono small">
+    <text x="58" y="218" fill="#d68073">29</text><text x="183" y="218" class="muted">30</text><text x="308" y="218" class="bright">1</text><text x="433" y="218" class="bright">2</text><text x="558" y="218" class="bright">3</text><text x="683" y="218" class="bright">4</text><text x="808" y="218" class="bright">5</text>
+    <text x="58" y="329" fill="#d68073">6</text><text x="183" y="329" class="bright">7</text><text x="308" y="329" class="bright">8</text><text x="433" y="329" class="bright">9</text><text x="558" y="329" class="bright">10</text><text x="683" y="329" class="bright">11</text><text x="808" y="329" class="muted">12</text>
+    <text x="58" y="440" fill="#d68073">13</text><text x="183" y="440" class="bright">14</text><text x="308" y="440" class="bright">15</text><text x="433" y="440" class="bright">16</text><text x="558" y="440" class="bright">17</text><text x="683" y="440" class="bright">18</text><text x="808" y="440" class="muted">19</text>
+    <text x="58" y="551" fill="#d68073">20</text><text x="183" y="551" class="bright">21</text><text x="308" y="551" class="bright">22</text><text x="433" y="551" class="bright">23</text><text x="558" y="551" class="bright">24</text><text x="683" y="551" class="bright">25</text><text x="808" y="551" class="muted">26</text>
+    <text x="58" y="662" fill="#d68073">27</text><text x="183" y="662" class="bright">28</text><text x="308" y="662" class="bright">29</text><text x="433" y="662" class="bright">30</text><text x="558" y="662" class="bright">31</text><text x="683" y="662" class="muted">1</text><text x="808" y="662" class="muted">2</text>
+    <text x="58" y="773" fill="#d68073">3</text><text x="183" y="773" class="bright">4</text><text x="308" y="773" class="bright">5</text><text x="433" y="773" class="bright">6</text><text x="558" y="773" class="bright">7</text><text x="683" y="773" class="bright">8</text><text x="808" y="773" class="muted">9</text>
+  </g>
+  <text x="44" y="779" class="mono muted" font-size="8">予定はこのPCに保存され、壁紙と同期されます</text>
+
+  <rect class="panel" x="946" y="98" width="430" height="454" rx="2"/>
+  <g class="sans">
+    <text x="966" y="127" class="green" font-size="13">›</text><text x="981" y="127" class="bright" font-size="13" font-weight="700">通知を予定にする</text>
+    <text x="966" y="153" class="muted" font-size="11">Windowsの通知を受信後、TeamsやChromeの通知文をこのPC内で読み取ります。</text>
+    <text x="966" y="171" class="muted" font-size="11">GmailはChromeでサイト通知を有効にしてください。候補は確認してから登録できます。</text>
+  </g>
+  <g class="mono tiny" font-weight="700">
+    <rect x="966" y="187" width="158" height="23" fill="#141b15" stroke="#344334"/><text x="974" y="202" class="green">TEAMS · WINDOWS NOTIFICATIONS</text>
+    <rect x="1132" y="187" width="211" height="23" fill="#141b15" stroke="#344334"/><text x="1140" y="202" class="green">GMAIL · CHROME NOTIFICATIONS</text>
+    <rect x="966" y="216" width="91" height="23" fill="#141b15" stroke="#344334"/><text x="974" y="231" class="green">ON THIS DEVICE</text>
+  </g>
+  <rect x="966" y="251" width="390" height="116" fill="#0c100d" stroke="#536953"/>
+  
+  <path d="M966 381H1257" stroke="#72f58a" stroke-width="1"/><rect x="966" y="380" width="292" height="36" fill="#72f58a"/><text x="1080" y="403" class="sans" fill="#101510" font-size="11" font-weight="700">文章から候補を作成</text>
+  <rect x="1266" y="380" width="77" height="36" fill="#141b15" stroke="#536953"/><text x="1281" y="403" class="sans green" font-size="10">例を入力</text>
+  <text x="966" y="435" class="sans muted" font-size="9">日付が読み取れない通知も候補に残ります。登録する前に日付を選んでください。</text>
+  <rect x="966" y="452" width="390" height="80" fill="#141b15" stroke="#344334"/>
+  
+
+  <rect class="panel" x="946" y="568" width="430" height="438" rx="2"/>
+  <text x="966" y="598" class="sans bright" font-size="13" font-weight="700">›　登録した予定</text><path d="M966 610H1356" stroke="#344334"/>
+  <g class="sans" aria-label="登録済みの予定はありません"></g></svg>
