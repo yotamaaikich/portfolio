@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101510">
-  <meta name="description" content="TeamsやChromeの通知から予定候補を作る、Windows向け個人制作アプリです。">
+  <meta name="description" content="TeamsやAndroidの通知を予定候補に変換し、Windowsとスマートフォンで同期する個人制作アプリです。">
   <title>NOTIFICATION CALENDAR — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261019-notification-svg1">
-  <script src="script.js?v=20261019-notification-svg1" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261021-notification-sync1">
+  <script src="script.js?v=20261021-notification-sync1" defer></script>
 </head>
 <body>
   <div class="startup-screen" id="startup-screen" aria-label="Windows startup animation" data-no-translate>
@@ -29,26 +29,26 @@
   </header>
   <main id="main" tabindex="-1">
     <section class="page-hero section-wrap">
-      <p class="eyebrow">PROJECT / 003 — WINDOWS DESKTOP APP</p>
-      <h1>通知カレンダー<br><span class="accent">Windowsデスクトップアプリ.</span></h1>
-      <p>TeamsやChromeの通知をこのPC上で読み取り、課題や予定の候補として整理するWindows向け個人制作アプリです。</p>
-      <div class="tag-row"><span>JavaScript / Node.js</span><span>Windows App SDK</span><span>Desktop</span></div>
+      <p class="eyebrow">PROJECT / 002 — WINDOWS & ANDROID APP</p>
+      <h1>通知カレンダー<br><span class="accent">Windows・Androidアプリ.</span></h1>
+      <p>Teamsやスマートフォンに届く通知を予定候補に変換し、WindowsとAndroidで共有する個人制作アプリです。</p>
+      <div class="tag-row"><span>JavaScript / Node.js</span><span>Kotlin</span><span>Firebase</span></div>
     </section>
     <section class="section-wrap section-block notification-calendar-showcase" aria-label="完成画面">
       <figure class="detail-preview notification-calendar-preview">
-        <img src="images/notification-calendar.svg" alt="2026年12月の月間カレンダー、通知文から予定候補を作成するパネル、登録済み予定の一覧を表示するNotification Calendarの完成画面">
+        <img src="images/notification-calendar.svg" alt="通知文から予定候補を作成する月間カレンダーと登録済み予定の一覧">
       </figure>
     </section>
     <section class="section-wrap detail-layout section-block">
       <div class="detail-main">
-        <section class="content-section"><p class="eyebrow">01 / OVERVIEW</p><h2>通知を予定候補に変える</h2><p>Windowsに届いたTeamsやChromeの通知を読み取り、本文から予定の候補を作ります。候補を確認し、必要に応じて日付を選んでからカレンダーへ登録できます。Gmailの通知もChrome経由で受け取れます。</p></section>
-        <section class="content-section"><p class="eyebrow">02 / WORKFLOW</p><h2>受信からカレンダー登録まで</h2><ul class="feature-list"><li>Windowsの通知からTeamsやChromeの通知文を取得</li><li>通知文から予定名や日付を読み取り、候補を作成</li><li>登録前に内容と日付を確認・編集</li><li>予定を月間カレンダーと一覧で管理</li></ul></section>
-        <section class="content-section"><p class="eyebrow">03 / LOCAL FIRST</p><h2>通知データはこのPC内に</h2><p>通知文をGoogle Cloudなどの外部サービスへ送らず、アプリはPC内で動作します。カレンダーの予定はブラウザーのローカルストレージとPC内のファイルに保存されます。</p></section>
-        <section class="content-section"><p class="eyebrow">04 / ENVIRONMENT</p><h2>動作環境と制限</h2><p>Windows 10 version 2004以降とNode.js 20以降が必要です。Windowsが通知として受け取り、リスナーが取得できる内容が対象です。通知をオフにしたチャットや、過去のTeamsチャンネル履歴を検索する機能はありません。</p></section>
+        <section class="content-section"><p class="eyebrow">01 / OVERVIEW</p><h2>通知を予定候補に変える</h2><p>Windowsに届くTeams・Chrome通知や、Android端末に届くアプリ通知から課題の期限や予定を読み取り、カレンダー候補を作ります。予定は月間カレンダーと一覧で確認でき、必要に応じて内容や日付を編集できます。</p></section>
+        <section class="content-section"><p class="eyebrow">02 / WORKFLOW</p><h2>受信から端末間の同期まで</h2><ul class="feature-list"><li>通知アクセスを許可した端末でTeamsなどの通知を受信</li><li>通知文からタイトルや日付を読み取り、予定候補を作成</li><li>候補を確認・編集して、カレンダーに登録</li><li>Firebase Authenticationでログインし、予定をPCとAndroidで同期</li></ul></section>
+        <section class="content-section"><p class="eyebrow">03 / PRIVACY</p><h2>同期するのは登録済みの予定だけ</h2><p>通知の原文は端末内で処理し、クラウドへ送信しません。クラウドに同期するのは登録した予定の日付・タイトル・元アプリです。同期にはFirebaseのメールアドレスとパスワードでログインします。</p></section>
+        <section class="content-section"><p class="eyebrow">04 / ENVIRONMENT</p><h2>動作環境と制限</h2><p>Windows版はWindows 10 version 2004以降とNode.js 20以降、Android版はAndroid 8以降が対象です。OSが通知として受け取り、通知アクセスを許可したアプリが取得できる内容を処理します。端末の電源が切れている間の通知や、過去のTeamsチャンネル履歴を取得する機能はありません。</p></section>
       </div>
-      <aside class="detail-sidebar"><div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl><dt>TYPE</dt><dd>Windows Desktop Application</dd><dt>TECHNOLOGY</dt><dd>JavaScript / Node.js / Windows App SDK</dd><dt>DATA</dt><dd>ローカル保存</dd><dt>ROLE</dt><dd>個人制作</dd></dl><a class="card-more" href="https://github.com/yotamaaikich/calenderfordesktop" target="_blank" rel="noopener noreferrer">GitHub REPOSITORY <span aria-hidden="true">↗</span></a></div></aside>
+      <aside class="detail-sidebar"><div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl><dt>TYPE</dt><dd>Windows & Android Application</dd><dt>TECHNOLOGY</dt><dd>JavaScript / Node.js / Kotlin / Firebase</dd><dt>DATA</dt><dd>通知は端末内・登録予定のみ同期</dd><dt>ROLE</dt><dd>個人制作</dd></dl><a class="card-more" href="https://github.com/yotamaaikich/calenderfordesktop" target="_blank" rel="noopener noreferrer">GitHub REPOSITORY <span aria-hidden="true">↗</span></a></div></aside>
     </section>
-    <section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="project-task-calendar.html">前の作品：課題カレンダー →</a><a href="project-portfolio.html">次の作品：ポートフォリオ →</a></section>
+    <section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="project-cafeteria.html">前の作品：食堂混雑状況</a><a href="project-portfolio.html">次の作品：ポートフォリオ →</a></section>
   </main>
   <footer class="site-footer"><a class="footer-brand" href="index.html">portfolio<span>© <span data-year></span> AIKICHIN0_0</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer>
 </body>
