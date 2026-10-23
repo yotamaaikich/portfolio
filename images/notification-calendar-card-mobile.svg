@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" role="img" aria-labelledby="title desc">
+<title id="title">Notification Calendar</title><desc id="desc">A calendar and notification icon for the Windows and Android schedule app.</desc>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#263328"/></pattern></defs>
+<rect width="600" height="200" fill="#101510"/><rect width="600" height="200" fill="url(#grid)" opacity=".6"/>
+<rect x="28" y="30" width="135" height="132" fill="#1b241c" stroke="#536953" stroke-width="2"/><path d="M28 66H163M56 20V43M135 20V43" fill="none" stroke="#72f58a" stroke-width="3"/>
+<g fill="#72f58a"><rect x="48" y="82" width="19" height="18" opacity=".35"/><rect x="86" y="82" width="19" height="18" opacity=".75"/><rect x="124" y="82" width="19" height="18" opacity=".35"/><rect x="48" y="117" width="19" height="18" opacity=".35"/><rect x="86" y="117" width="19" height="18" opacity=".35"/><rect x="124" y="117" width="19" height="18" opacity=".35"/></g>
+<rect x="142" y="19" width="31" height="31" fill="#72f58a"/><path d="M157 26V37M157 40V43" stroke="#101510" stroke-width="3"/>
+<g font-family="Consolas,'Courier New',monospace"><text x="198" y="70" fill="#e5ede5" font-size="25" font-weight="700" letter-spacing="1">NOTIFICATION</text><text x="198" y="111" fill="#72f58a" font-size="35" font-weight="700" letter-spacing="2">CALENDAR</text>
+<path d="M198 129H545" stroke="#344334"/><text x="198" y="155" fill="#b9e6bf" font-size="15" letter-spacing="1">WINDOWS + ANDROID</text></g>
+</svg>

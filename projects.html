@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="Webサイトやアプリなど、これまでに制作したものを紹介します。">
   <title>PROJECTS — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261023-compact-calendar-card">
+  <link rel="stylesheet" href="style.css?v=20261023-mobile-layout3">
   <script src="script.js?v=20261021-calendar-refresh1" defer></script>
 </head>
 <body>
@@ -47,7 +47,10 @@
         </article>
         <article class="project-card">
           <a class="project-visual visual-notification-calendar" href="project-notification-calendar.html" aria-label="通知カレンダーの詳細">
-            <img class="notification-calendar-art" src="images/notification-calendar-card.svg" alt="Teams・Chrome・Androidの通知から予定候補を作り、PCとスマートフォンで同期する通知カレンダー">
+            <picture class="notification-calendar-picture">
+              <source media="(max-width: 560px)" srcset="images/notification-calendar-card-mobile.svg">
+              <img class="notification-calendar-art" src="images/notification-calendar-card.svg?v=pc2" alt="Teams・Chrome・Androidの通知から予定候補を作り、PCとスマートフォンで同期する通知カレンダー">
+            </picture>
             <span class="visual-index">PROJECT / 02</span>
           </a>
           <div class="project-card-body"><div class="card-title-row"><h2>通知カレンダー</h2></div><p>TeamsやAndroidの通知から予定候補を作成し、Windowsとスマートフォンで予定を同期する個人制作アプリです。</p><div class="tag-row"><span>JavaScript</span><span>Kotlin</span><span>Firebase</span></div><a class="card-more" href="project-notification-calendar.html">DETAILS <span aria-hidden="true">→</span></a></div>
