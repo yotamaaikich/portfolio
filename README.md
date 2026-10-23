@@ -6,7 +6,7 @@
 
 ## 掲載作品
 
-- **食堂混雑状況確認サイト** — JavaScriptとSupabaseを使い、混雑状況・予測・メニューを確認できるWebアプリです。管理画面から人数や販売状況、お知らせを更新する構成です。2026年11月のハッカソン展示に向けて制作しています。
+- **食堂混雑状況確認サイト** — JavaScriptとSupabaseを使い、混雑状況・予測・メニューを確認できる5人のチーム制作アプリです。担当はソースの統合、Viteのビルド環境、GitHub Pagesの公開設定、人数認識用AIモデルの配信準備、README・ライセンス表記の整備です。2026年11月のハッカソン展示に向けて制作中です。[GitHub](https://github.com/yotamaaikich/cafeteria-site) / [サイト（未完成・公開準備中）](https://yotamaaikich.github.io/cafeteria-site/)
 - **通知カレンダー** — WindowsとAndroidに届く通知から予定候補を作り、登録した予定を端末間で同期する個人制作アプリです。通知の原文は端末内に残し、クラウドには登録済みの予定だけを同期します。
 - **ポートフォリオサイト** — 掲載内容の企画、デザイン調整、HTML / CSS / JavaScriptでの実装、GitHub Pagesでの公開に取り組んだWebサイトです。
 - **課題04：タートルグラフィックス** — PythonのTurtle Graphicsで線や図形を描き、組み合わせて模様を作る課題です。[Google Colabで開く](https://colab.research.google.com/drive/12e1rPLhru1LintmAEWf_n2jAMvPAyR8Q?usp=sharing&classId=bfb5d42f-49e1-49a9-a762-5922349606fb&assignmentId=0931f89e-a22e-4a29-94b4-4fd6e249cd9b&submissionId=c1ac5e8e-0037-dd9d-5972-5b535dbb869f)
