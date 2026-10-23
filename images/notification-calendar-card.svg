@@ -1,41 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">通知カレンダーの月間予定</title>
-  <desc id="desc">通知から集めた課題や予定を月間カレンダーと一覧で確認できる画面。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">Notification Calendar</title>
+  <desc id="desc">A compact preview of the notification calendar with a monthly calendar and event capture panel.</desc>
   <defs>
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#263328" stroke-width="1"/></pattern>
-    <style>
-      .mono{font-family:Consolas,'Courier New',monospace}.sans{font-family:'Segoe UI','Yu Gothic UI',sans-serif}
-      .muted{fill:#8aa08c}.bright{fill:#e5ede5}.green{fill:#72f58a}.line{stroke:#344334}
-    </style>
+    <style>.mono{font-family:Consolas,'Courier New',monospace}.sans{font-family:'Segoe UI','Yu Gothic UI',sans-serif}.muted{fill:#91a393}.bright{fill:#e5ede5}.green{fill:#72f58a}.line{stroke:#344334}</style>
   </defs>
-  <rect width="1200" height="675" fill="#101510"/><rect width="1200" height="675" fill="url(#grid)" opacity=".55"/>
-  <rect x="28" y="26" width="38" height="38" fill="#141b15" stroke="#536953"/>
-  <path d="M40 38h14v14H40z" fill="none" stroke="#72f58a" stroke-width="2"/><path d="M45 43h4v4h-4z" fill="#72f58a"/>
-  <text x="82" y="43" class="mono bright" font-size="15" font-weight="700" letter-spacing=".5">NOTIFICATION CALENDAR</text>
-  <text x="82" y="59" class="mono muted" font-size="9" letter-spacing="1.5">PC + ANDROID / SCHEDULE SYNC</text>
-  <circle cx="1045" cy="44" r="4" fill="#72f58a"/><text x="1057" y="48" class="mono green" font-size="10">SYNC ACTIVE</text>
-  <path d="M28 82H1172" class="line"/>
-  <rect x="28" y="104" width="795" height="535" rx="2" fill="#1b241c" stroke="#344334"/>
-  <text x="54" y="143" class="sans green" font-size="24" font-weight="700">2026年 10月</text>
-  <rect x="701" y="119" width="48" height="32" fill="#141b15" stroke="#536953"/><text x="717" y="140" class="sans green" font-size="14">今日</text>
-  <path d="M762 135h22m-8-8 8 8-8 8" fill="none" stroke="#8aa08c" stroke-width="2"/>
-  <g class="mono muted" font-size="12" text-anchor="middle"><text x="91" y="180">日</text><text x="202" y="180">月</text><text x="313" y="180">火</text><text x="424" y="180">水</text><text x="535" y="180">木</text><text x="646" y="180">金</text><text x="757" y="180">土</text></g>
+  <rect width="1200" height="400" fill="#101510"/><rect width="1200" height="400" fill="url(#grid)" opacity=".55"/>
+  <rect x="34" y="42" width="316" height="316" fill="#1b241c" stroke="#344334"/>
+  <rect x="54" y="63" width="276" height="35" fill="#141b15" stroke="#536953"/>
+  <path d="M66 74v-5m20 5v-5M62 78h30v14H62z" fill="none" stroke="#72f58a" stroke-width="2"/>
+  <text x="104" y="86" class="mono bright" font-size="15" font-weight="700">MONTHLY CALENDAR</text>
   <g fill="#141b15" stroke="#344334">
-    <rect x="48" y="196" width="111" height="84"/><rect x="159" y="196" width="111" height="84"/><rect x="270" y="196" width="111" height="84"/><rect x="381" y="196" width="111" height="84"/><rect x="492" y="196" width="111" height="84"/><rect x="603" y="196" width="111" height="84"/><rect x="714" y="196" width="89" height="84"/>
-    <rect x="48" y="280" width="111" height="84"/><rect x="159" y="280" width="111" height="84"/><rect x="270" y="280" width="111" height="84"/><rect x="381" y="280" width="111" height="84"/><rect x="492" y="280" width="111" height="84"/><rect x="603" y="280" width="111" height="84"/><rect x="714" y="280" width="89" height="84"/>
-    <rect x="48" y="364" width="111" height="84"/><rect x="159" y="364" width="111" height="84"/><rect x="270" y="364" width="111" height="84"/><rect x="381" y="364" width="111" height="84"/><rect x="492" y="364" width="111" height="84"/><rect x="603" y="364" width="111" height="84"/><rect x="714" y="364" width="89" height="84"/>
-    <rect x="48" y="448" width="111" height="84"/><rect x="159" y="448" width="111" height="84"/><rect x="270" y="448" width="111" height="84"/><rect x="381" y="448" width="111" height="84"/><rect x="492" y="448" width="111" height="84"/><rect x="603" y="448" width="111" height="84"/><rect x="714" y="448" width="89" height="84"/>
-    <rect x="48" y="532" width="111" height="84"/><rect x="159" y="532" width="111" height="84"/><rect x="270" y="532" width="111" height="84"/><rect x="381" y="532" width="111" height="84"/><rect x="492" y="532" width="111" height="84"/><rect x="603" y="532" width="111" height="84"/><rect x="714" y="532" width="89" height="84"/>
+    <rect x="58" y="115" width="36" height="35"/><rect x="96" y="115" width="36" height="35"/><rect x="134" y="115" width="36" height="35"/><rect x="172" y="115" width="36" height="35"/><rect x="210" y="115" width="36" height="35"/><rect x="248" y="115" width="36" height="35"/><rect x="286" y="115" width="36" height="35"/>
+    <rect x="58" y="152" width="36" height="35"/><rect x="96" y="152" width="36" height="35"/><rect x="134" y="152" width="36" height="35"/><rect x="172" y="152" width="36" height="35"/><rect x="210" y="152" width="36" height="35"/><rect x="248" y="152" width="36" height="35"/><rect x="286" y="152" width="36" height="35"/>
+    <rect x="58" y="189" width="36" height="35"/><rect x="96" y="189" width="36" height="35"/><rect x="134" y="189" width="36" height="35"/><rect x="172" y="189" width="36" height="35"/><rect x="210" y="189" width="36" height="35"/><rect x="248" y="189" width="36" height="35"/><rect x="286" y="189" width="36" height="35"/>
+    <rect x="58" y="226" width="36" height="35"/><rect x="96" y="226" width="36" height="35"/><rect x="134" y="226" width="36" height="35"/><rect x="172" y="226" width="36" height="35"/><rect x="210" y="226" width="36" height="35"/><rect x="248" y="226" width="36" height="35"/><rect x="286" y="226" width="36" height="35"/>
   </g>
-  <g class="mono" font-size="11" fill="#8aa08c"><text x="60" y="216">27</text><text x="171" y="216">28</text><text x="282" y="216">29</text><text x="393" y="216">30</text><text x="504" y="216" class="bright">1</text><text x="615" y="216" class="bright">2</text><text x="726" y="216" class="bright">3</text><text x="60" y="300" class="bright">4</text><text x="171" y="300" class="bright">5</text><text x="282" y="300" class="bright">6</text><text x="393" y="300" class="bright">7</text><text x="504" y="300" class="bright">8</text><text x="615" y="300" class="bright">9</text><text x="726" y="300" class="bright">10</text><text x="60" y="384" class="bright">11</text><text x="171" y="384" class="bright">12</text><text x="282" y="384" class="bright">13</text><text x="393" y="384" class="bright">14</text><text x="504" y="384" class="bright">15</text><text x="615" y="384" class="bright">16</text><text x="726" y="384" class="bright">17</text><text x="60" y="468" class="bright">18</text><text x="171" y="468" class="bright">19</text><text x="282" y="468" class="bright">20</text><text x="393" y="468" class="bright">21</text><text x="504" y="468" class="bright">22</text><text x="615" y="468" class="bright">23</text><text x="726" y="468" class="bright">24</text><text x="60" y="552" class="bright">25</text><text x="171" y="552" class="bright">26</text><text x="282" y="552" class="bright">27</text><text x="393" y="552" class="bright">28</text><text x="504" y="552" class="bright">29</text><text x="615" y="552" class="bright">30</text><text x="726" y="552" class="bright">31</text></g>
-  <rect x="396" y="480" width="88" height="23" fill="#293428"/><rect x="397" y="480" width="3" height="23" fill="#72f58a"/><text x="406" y="496" class="sans green" font-size="10">課題レポート</text>
-  <rect x="507" y="480" width="88" height="23" fill="#293428"/><rect x="508" y="480" width="3" height="23" fill="#f09a69"/><text x="517" y="496" class="sans" fill="#f09a69" font-size="10">ゼミ発表</text>
-  <rect x="48" y="650" width="795" height="0" fill="none"/>
-  <rect x="845" y="104" width="327" height="535" rx="2" fill="#1b241c" stroke="#344334"/>
-  <text x="872" y="145" class="sans bright" font-size="19" font-weight="700">予定をまとめて確認</text>
-  <text x="872" y="169" class="sans muted" font-size="12">通知から予定候補を自動で作成</text>
-  <path d="M872 190H1145" class="line"/>
-  <g class="sans"><rect x="872" y="211" width="273" height="76" fill="#141b15" stroke="#344334"/><circle cx="896" cy="239" r="13" fill="#263c2a"/><text x="891" y="243" class="green" font-size="10">T</text><text x="918" y="235" class="bright" font-size="13" font-weight="700">課題レポート提出</text><text x="918" y="257" class="muted" font-size="11">10月21日 · Teams</text><rect x="872" y="301" width="273" height="76" fill="#141b15" stroke="#344334"/><circle cx="896" cy="329" r="13" fill="#263c2a"/><text x="891" y="333" class="green" font-size="10">G</text><text x="918" y="325" class="bright" font-size="13" font-weight="700">ゼミ発表の準備</text><text x="918" y="347" class="muted" font-size="11">10月22日 · Gmail</text></g>
-  <rect x="872" y="405" width="273" height="74" rx="2" fill="#202c21" stroke="#425843"/><circle cx="894" cy="429" r="4" fill="#72f58a"/><text x="907" y="433" class="mono green" font-size="10" letter-spacing=".5">PC + ANDROID SYNC</text><text x="891" y="456" class="sans muted" font-size="11">予定をどこでも同じように確認</text>
-  <rect x="872" y="503" width="273" height="48" rx="2" fill="#72f58a"/><text x="1008" y="533" class="sans" fill="#101510" font-size="14" text-anchor="middle" font-weight="700">通知を予定に</text>
+  <circle cx="190" cy="206" r="8" fill="#72f58a" opacity=".95"/><circle cx="266" cy="243" r="5" fill="#72f58a" opacity=".75"/>
+  <text x="58" y="293" class="mono muted" font-size="11">MONTH VIEW · LOCAL SCHEDULE</text>
+
+  <g>
+    <rect x="390" y="42" width="776" height="316" fill="#1b241c" stroke="#344334"/>
+    <text x="424" y="86" class="sans green" font-size="14">›</text><text x="447" y="86" class="sans bright" font-size="20" font-weight="700">通知から予定候補を作成</text>
+    <text x="424" y="121" class="sans muted" font-size="14">Windows・Androidの通知を確認し、内容を編集してカレンダーへ登録</text>
+    <rect x="424" y="151" width="300" height="35" fill="#141b15" stroke="#344334"/><text x="440" y="174" class="mono green" font-size="12" font-weight="700">TEAMS · WINDOWS NOTIFICATIONS</text>
+    <rect x="736" y="151" width="267" height="35" fill="#141b15" stroke="#344334"/><text x="752" y="174" class="mono green" font-size="12" font-weight="700">ANDROID APP NOTIFICATIONS</text>
+    <rect x="1015" y="151" width="116" height="35" fill="#141b15" stroke="#344334"/><text x="1031" y="174" class="mono green" font-size="12" font-weight="700">LOCAL FIRST</text>
+    <rect x="424" y="210" width="707" height="90" fill="#0c100d" stroke="#536953"/>
+    <rect x="424" y="316" width="707" height="24" fill="#72f58a"/><text x="684" y="333" class="sans" fill="#101510" font-size="13" font-weight="700">通知を確認して予定に登録</text>
+  </g>
 </svg>
