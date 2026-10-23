@@ -1,5 +1,6 @@
 (() => {
   const copy = {
+    "ページ名を入力してEnterで移動": ["Enter a page name and press Enter to navigate", "输入页面名称并按 Enter 跳转"],
     "Windows・Androidアプリ.": ["Windows & Android app.", "Windows 和 Android 应用。"],
     "Teamsやスマートフォンに届く通知を予定候補に変換し、WindowsとAndroidで共有する個人制作アプリです。": ["A personal app that turns notifications delivered to Teams and smartphones into calendar candidates, then shares saved events between Windows and Android.", "这是一款个人应用，可将 Teams 和手机收到的通知转换为日程候选项，并在 Windows 与 Android 之间共享已保存的日程。"],
     "通知文から予定候補を作成する月間カレンダーと登録済み予定の一覧": ["Monthly calendar and saved events list for creating candidates from notification text", "从通知文本创建日程候选项的月历和已保存日程列表"],
@@ -281,6 +282,52 @@
     event.preventDefault();
     navigateWithTransition(destination.href);
   });
+
+  const header = document.querySelector(".site-header");
+  if (header) {
+    const updateHeaderOffset = () => document.documentElement.style.setProperty("--header-offset", `${Math.ceil(header.getBoundingClientRect().height) + 12}px`);
+    new ResizeObserver(updateHeaderOffset).observe(header);
+    updateHeaderOffset();
+  }
+  const headerForm = document.querySelector(".header-command-form");
+  if (headerForm) {
+    const input = headerForm.querySelector(".header-command");
+    const feedback = headerForm.querySelector(".header-command-feedback");
+    const currentLabel = input.defaultValue;
+    const routes = {
+      home: "index.html", index: "index.html",
+      project: "projects.html", projects: "projects.html",
+      about: "about.html", profile: "about.html", contact: "contact.html",
+      cafeteria: "project-cafeteria.html",
+      calendar: "project-notification-calendar.html", portfolio: "project-portfolio.html"
+    };
+    const clearFeedback = () => { feedback.hidden = true; input.removeAttribute("aria-invalid"); };
+    const resetCommand = () => { input.value = currentLabel; clearFeedback(); };
+    input.addEventListener("focus", () => input.select());
+    input.addEventListener("input", clearFeedback);
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") { resetCommand(); input.blur(); }
+    });
+    input.addEventListener("blur", () => { if (!input.value.trim()) resetCommand(); });
+    window.addEventListener("pageshow", resetCommand);
+    headerForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const command = input.value.trim().toLowerCase().replace(/^cd\s+/, "").replace(/^\/?(?:\.\/)?/, "").replace(/\/?(?:\.html)?$/, "");
+      const destination = routes[command];
+      if (!destination) {
+        input.setAttribute("aria-invalid", "true");
+        feedback.textContent = "Use HOME / PROJECTS / ABOUT / CONTACT, then Enter.";
+        feedback.hidden = false;
+        return;
+      }
+      clearFeedback();
+      if (new URL(destination, location.href).pathname === location.pathname) {
+        resetCommand(); input.blur(); window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        navigateWithTransition(destination);
+      }
+    });
+  }
 
   const startup = document.querySelector("#startup-screen");
   if (startup) {

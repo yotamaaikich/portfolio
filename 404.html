@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="お探しのページは見つかりませんでした。ポートフォリオのホームまたは制作物一覧へお戻りください。">
   <title>404 — ページが見つかりません — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261023-mobile-layout3">
-  <script src="script.js?v=20261019-notification-svg1" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261023-sticky-command1">
+  <script src="script.js?v=20261023-sticky-command1" defer></script>
 </head>
 <body>
   <div class="startup-screen" id="startup-screen" aria-label="Windows startup animation" data-no-translate>
@@ -21,7 +21,19 @@
   </div>
   <a class="skip-link" href="#main">本文へスキップ</a>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム"><span class="brand-mark" aria-hidden="true">▣</span><span>aikichin0_0@portfolio:~$<span class="brand-sub">AIKICHIN PORTFOLIO</span></span></a>
+    <div class="brand">
+      <a class="brand-mark" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム">▣</a>
+      <div class="brand-text">
+        <div class="brand-command-line">
+          <a class="brand-prompt" href="index.html">aikichin0_0@portfolio:~$</a>
+          <form class="header-command-form" action="projects.html">
+            <input class="header-command" name="page" type="text" value="404" aria-label="ページ名を入力してEnterで移動" title="HOME / PROJECTS / ABOUT / CONTACT + Enter" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go">
+            <span class="header-command-feedback" role="status" data-no-translate hidden></span>
+          </form>
+        </div>
+        <a class="brand-sub" href="index.html">AIKICHIN PORTFOLIO</a>
+      </div>
+    </div>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span aria-hidden="true">＋</span></button>
     <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
       <a href="index.html">HOME</a><a href="projects.html">PROJECTS</a><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a>
