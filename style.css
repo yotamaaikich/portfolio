@@ -391,9 +391,3 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 @media (prefers-reduced-motion: reduce) { .page-transition, .page-transition-window { transition-duration: .01ms; }.page-transition-progress span { animation-duration: .01ms; }.page-transition.is-active::after { animation: none; }.scroll-progress { transition: none; }.project-console-preview { transition: none; }.reveal-on-scroll, .reveal-on-scroll.is-revealed { opacity: 1; transform: none; transition: none; } }
 .language-switch { min-height: 34px; padding: .35rem 1.7rem .35rem .55rem; border: 1px solid var(--line-bright); border-radius: 0; background: var(--panel); color: var(--green); font: 500 .66rem var(--mono); cursor: pointer; }
 .language-switch:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
-
-/* Cafeteria project role and public links */
-.project-card-body > .project-role, .page-hero > .project-role { min-height: 0; color: var(--green-soft); font-size: .8rem; }
-.project-links { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin-top: 1rem; }
-.project-links a { color: var(--green); font: .72rem var(--mono); text-decoration: underline; text-underline-offset: .25em; }
-.project-links a:hover { color: var(--green-soft); }
