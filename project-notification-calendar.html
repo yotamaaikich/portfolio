@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#101510">
   <meta name="description" content="TeamsやAndroidの通知を予定候補に変換し、Windowsとスマートフォンで同期する個人制作アプリです。">
   <title>NOTIFICATION CALENDAR — AIKICHIN PORTFOLIO</title>
-  <link rel="stylesheet" href="style.css?v=20261021-notification-sync1">
+  <link rel="stylesheet" href="style.css?v=20261023-mobile-svg2">
   <script src="script.js?v=20261021-notification-sync1" defer></script>
 </head>
 <body>
@@ -36,7 +36,10 @@
     </section>
     <section class="section-wrap section-block notification-calendar-showcase" aria-label="完成画面">
       <figure class="detail-preview notification-calendar-preview">
-        <img src="images/notification-calendar.svg" alt="通知文から予定候補を作成する月間カレンダーと登録済み予定の一覧">
+        <picture>
+          <source media="(max-width: 600px)" srcset="images/notification-calendar-mobile.svg">
+          <img src="images/notification-calendar.svg" alt="通知文から予定候補を作成する月間カレンダーと登録済み予定の一覧">
+        </picture>
       </figure>
     </section>
     <section class="section-wrap detail-layout section-block">
