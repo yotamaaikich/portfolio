@@ -1,5 +1,26 @@
 (() => {
   const copy = {
+    "フリック・トラッキング・反応速度を練習できるWebアプリです。結果の保存やCSV出力にも対応しています。": ["A web app for flick, tracking and reflex practice, with saved results and CSV export.", "支持甩枪、跟枪和反应速度训练的网页应用，可保存成绩并导出 CSV。"],
+    "AimForgeの詳細": ["AimForge details", "AimForge 详情"],
+    "的と照準、3つの練習モードを示すAimForgeのSVGイメージ": ["SVG concept showing targets, a crosshair and three AimForge training modes", "展示靶标、准星和 AimForge 三种训练模式的 SVG 示意图"],
+    "エイム練習アプリ.": ["aim trainer.", "瞄准训练应用。"],
+    "3つの練習モードを示したSVGイメージです。": ["SVG concept illustrating the three training modes.", "展示三种训练模式的 SVG 示意图。"],
+    "マウス操作を、繰り返し練習する": ["Practice mouse control, again and again", "反复练习鼠标操作"],
+    "表示された的をクリックするフリック、動く的を追うトラッキング、的が現れるまで待ってクリックする反応速度の3モードを備えた、ブラウザーで動くエイム練習アプリです。": ["A browser aim trainer with three modes: click targets in flick practice, follow moving targets in tracking, and wait for targets to appear in reflex practice.", "在浏览器中运行的瞄准训练应用，包含点击靶标的甩枪训练、追踪移动靶标的跟枪训练，以及等待靶标出现后点击的反应速度训练。"],
+    "練習から記録の振り返りまで": ["From practice to reviewing results", "从训练到回顾成绩"],
+    "モード・難易度・練習時間を選択": ["Choose a mode, difficulty and session length", "选择模式、难度和训练时长"],
+    "直近100件の結果をブラウザー内に保存し、CSVで出力": ["Save the latest 100 results in the browser and export them as CSV", "在浏览器中保存最近 100 次成绩，并导出为 CSV"],
+    "タブを離れたときの自動一時停止": ["Automatically pause when you leave the tab", "离开标签页时自动暂停"],
+    "効果音と全画面表示に対応": ["Optional sound effects and fullscreen mode", "支持音效和全屏显示"],
+    "操作方法": ["Controls", "操作方法"],
+    "フリックと反応速度は的をクリックし、トラッキングは左ボタンを押したまま的を追います。Spaceで開始・一時停止・再開、Escで中断できます。中断した練習は記録に残りません。": ["Click targets for flick and reflex practice. Hold the left mouse button while following a target for tracking. Space starts, pauses or resumes a session; Esc ends it without saving a result.", "甩枪和反应速度训练中点击靶标；跟枪训练中按住鼠标左键追踪靶标。Space 开始、暂停或继续，Esc 中断训练。中断的训练不会保存成绩。"],
+    "ブラウザーだけで動く構成": ["Built to run in the browser", "在浏览器中运行的结构"],
+    "HTML・CSS・JavaScriptとCanvasで構成し、ゲーム処理と画面制御を分けています。外部フォントやライブラリを読み込まず、記録はlocalStorageに保存します。同じモード・難易度・時間で結果を比較できます。": ["Built with HTML, CSS, JavaScript and Canvas, with separate game logic and UI control. It loads no external fonts or libraries and saves results in localStorage. Compare results using the same mode, difficulty and duration.", "使用 HTML、CSS、JavaScript 和 Canvas 构建，游戏逻辑与界面控制分离。不加载外部字体或库，成绩保存在 localStorage 中。可在相同模式、难度和时长下比较成绩。"],
+    "ブラウザー内に保存": ["Saved in the browser", "保存在浏览器中"],
+    "プレイする": ["Play now", "开始训练"],
+    "前の作品：AimForge": ["Previous: AimForge", "上一个作品：AimForge"],
+    "次の作品：AimForge →": ["Next: AimForge →", "下一个作品：AimForge →"],
+
     "担当：統合・ビルド・公開設定・AIモデル配信": ["My role: integration, builds, deployment setup, and AI model hosting","负责：集成、构建、部署配置与 AI 模型托管"],
     "サイト（未完成）": ["Website (in development)","网站（开发中）"],
     "GitHubでソースを見る": ["View source on GitHub","在 GitHub 查看源码"],
@@ -105,6 +126,7 @@
       "contact.html": ["CONTACT — AIKICHIN PORTFOLIO", "联系 — AIKICHIN 作品集"],
       "project-cafeteria.html": ["CAFETERIA CROWD MONITOR — AIKICHIN PORTFOLIO", "食堂拥挤情况查询 — AIKICHIN 作品集"],
       "project-notification-calendar.html": ["NOTIFICATION CALENDAR — AIKICHIN PORTFOLIO", "通知日历 — AIKICHIN 作品集"],
+      "project-aimforge.html": ["AIMFORGE — AIKICHIN PORTFOLIO", "AimForge — AIKICHIN 作品集"],
       "project-portfolio.html": ["PORTFOLIO SITE — AIKICHIN PORTFOLIO", "作品集网站 — AIKICHIN 作品集"],
       "404.html": ["404 — PAGE NOT FOUND — AIKICHIN PORTFOLIO", "404 — 页面未找到 — AIKICHIN 作品集"]
     };
@@ -118,6 +140,7 @@
       "contact.html": ["Links to Aikichin's GitHub, portfolio, X, and Discord.", "Aikichin 的 GitHub、作品集、X 和 Discord 链接。"],
       "project-cafeteria.html": ["A cafeteria crowd-monitoring web app project built with JavaScript and Supabase.", "使用 JavaScript 和 Supabase 开发的食堂拥挤情况查询网页应用。"],
       "project-notification-calendar.html": ["A Windows and Android app that turns notifications into calendar candidates and syncs saved events.", "一款将通知转换为日程候选项并同步已保存日程的 Windows 和 Android 应用。"],
+      "project-aimforge.html": ["A browser aim trainer with flick, tracking, reflex practice and local results.", "支持甩枪、跟枪和反应速度训练，并在本地保存成绩的网页应用。"],
       "project-portfolio.html": ["Design, features, and development process of Aikichin's portfolio website.", "Aikichin 作品集网站的设计、功能与开发过程。"]
     };
     if (descriptionElement && descriptions[page]) descriptionElement.content = language === "ja" ? japaneseDescription : descriptions[page][language === "en" ? 0 : 1];
@@ -309,37 +332,105 @@
     const input = headerForm.querySelector(".header-command");
     const feedback = headerForm.querySelector(".header-command-feedback");
     const currentLabel = input.defaultValue;
-    const routes = {
-      home: "index.html", index: "index.html",
-      project: "projects.html", projects: "projects.html",
-      about: "about.html", profile: "about.html", contact: "contact.html",
-      cafeteria: "project-cafeteria.html",
-      calendar: "project-notification-calendar.html", portfolio: "project-portfolio.html"
-    };
+    const destinations = [
+      { command: "home", label: "HOME", href: "index.html", aliases: ["index"] },
+      { command: "projects", label: "PROJECTS", href: "projects.html", aliases: ["project"] },
+      { command: "about", label: "ABOUT", href: "about.html", aliases: ["profile"] },
+      { command: "contact", label: "CONTACT", href: "contact.html", aliases: [] },
+      { command: "cafeteria", label: "CAFETERIA", href: "project-cafeteria.html", aliases: ["project-cafeteria"] },
+      { command: "calendar", label: "CALENDAR", href: "project-notification-calendar.html", aliases: ["project-notification-calendar"] },
+      { command: "aimforge", label: "AIMFORGE", href: "project-aimforge.html", aliases: ["aim", "project-aimforge"] },
+      { command: "portfolio", label: "PORTFOLIO", href: "project-portfolio.html", aliases: ["project-portfolio"] }
+    ];
+    const normalize = value => value.trim().toLowerCase().replace(/^cd\s+/, "").replace(/^(?:\.\/|\/)/, "").replace(/\/$/, "").replace(/\.html$/, "");
+    const panel = document.createElement("div");
+    panel.className = "header-command-panel";
+    panel.dataset.noTranslate = "";
+    panel.hidden = true;
+    panel.innerHTML = '<div class="header-command-list" id="header-command-options" role="listbox" aria-label="Pages"></div><p class="header-command-empty" role="status" hidden>No matching pages. Try HOME or PROJECTS.</p><p class="header-command-tip">TYPE / CLICK / ↑ ↓ + ENTER</p>';
+    header.append(panel);
+    const list = panel.querySelector(".header-command-list");
+    const empty = panel.querySelector(".header-command-empty");
+    input.setAttribute("role", "combobox");
+    input.setAttribute("aria-autocomplete", "list");
+    input.setAttribute("aria-controls", list.id);
+    input.setAttribute("aria-expanded", "false");
+    let matches = [];
+    let activeIndex = -1;
     const clearFeedback = () => { feedback.hidden = true; input.removeAttribute("aria-invalid"); };
-    const resetCommand = () => { input.value = currentLabel; clearFeedback(); };
-    input.addEventListener("focus", () => input.select());
-    input.addEventListener("input", clearFeedback);
-    input.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") { resetCommand(); input.blur(); }
+    const closePanel = () => {
+      panel.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
+      activeIndex = -1;
+    };
+    const resetCommand = () => { input.value = currentLabel; clearFeedback(); closePanel(); };
+    const renderOptions = (query = "") => {
+      const term = normalize(query);
+      matches = destinations.filter(item => [item.command, ...item.aliases].some(value => value.includes(term)));
+      activeIndex = -1;
+      input.removeAttribute("aria-activedescendant");
+      list.replaceChildren();
+      matches.forEach((item, index) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.className = "header-command-option";
+        option.id = `header-command-option-${index}`;
+        option.tabIndex = -1;
+        option.setAttribute("role", "option");
+        option.setAttribute("aria-selected", "false");
+        option.textContent = item.label;
+        option.addEventListener("pointerdown", event => event.preventDefault());
+        option.addEventListener("click", () => {
+          input.value = item.command;
+          activeIndex = -1;
+          headerForm.requestSubmit();
+        });
+        list.append(option);
+      });
+      empty.hidden = matches.length > 0;
+      panel.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+    };
+    input.addEventListener("focus", () => { input.select(); renderOptions(); });
+    input.addEventListener("input", () => { clearFeedback(); renderOptions(input.value); });
+    input.addEventListener("keydown", event => {
+      if (event.isComposing) return;
+      if (event.key === "Escape") { event.preventDefault(); resetCommand(); input.blur(); }
+      if (event.key === "Tab") closePanel();
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        if (panel.hidden) renderOptions();
+        if (!matches.length) return;
+        activeIndex = activeIndex < 0 ? (event.key === "ArrowDown" ? 0 : matches.length - 1) : (activeIndex + (event.key === "ArrowDown" ? 1 : -1) + matches.length) % matches.length;
+        [...list.children].forEach((option, index) => option.setAttribute("aria-selected", String(index === activeIndex)));
+        input.setAttribute("aria-activedescendant", list.children[activeIndex].id);
+        list.children[activeIndex].scrollIntoView({ block: "nearest" });
+      }
     });
-    input.addEventListener("blur", () => { if (!input.value.trim()) resetCommand(); });
+    input.addEventListener("blur", () => { if (!input.value.trim()) input.value = currentLabel; closePanel(); });
+    document.addEventListener("pointerdown", event => {
+      if (!headerForm.contains(event.target) && !panel.contains(event.target)) closePanel();
+    });
     window.addEventListener("pageshow", resetCommand);
-    headerForm.addEventListener("submit", (event) => {
+    headerForm.addEventListener("submit", event => {
       event.preventDefault();
-      const command = input.value.trim().toLowerCase().replace(/^cd\s+/, "").replace(/^\/?(?:\.\/)?/, "").replace(/\/?(?:\.html)?$/, "");
-      const destination = routes[command];
+      const command = normalize(activeIndex >= 0 ? matches[activeIndex].command : input.value);
+      const destination = destinations.find(item => [item.command, ...item.aliases].includes(command));
       if (!destination) {
         input.setAttribute("aria-invalid", "true");
-        feedback.textContent = "Use HOME / PROJECTS / ABOUT / CONTACT, then Enter.";
+        feedback.textContent = "Choose a page below, or enter HOME / PROJECTS / ABOUT / CONTACT.";
         feedback.hidden = false;
+        renderOptions(input.value);
         return;
       }
+      input.value = destination.label;
       clearFeedback();
-      if (new URL(destination, location.href).pathname === location.pathname) {
+      closePanel();
+      if (new URL(destination.href, location.href).pathname === location.pathname) {
         resetCommand(); input.blur(); window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-        navigateWithTransition(destination);
+        navigateWithTransition(destination.href);
       }
     });
   }
@@ -663,6 +754,7 @@
       { href: "projects.html", labels: ["制作物一覧", "All projects", "作品列表"], terms: ["project", "作品", "制作物", "一覧"] },
       { href: "project-cafeteria.html", labels: ["食堂混雑状況確認サイト", "Cafeteria crowd monitor", "食堂拥挤情况查询"], terms: ["cafeteria", "食堂", "混雑"] },
       { href: "project-notification-calendar.html", labels: ["通知カレンダー", "Notification Calendar", "通知日历"], terms: ["notification", "teams", "通知", "予定"] },
+      { href: "project-aimforge.html", labels: ["AimForge エイム練習アプリ", "AimForge aim trainer", "AimForge 瞄准训练"], terms: ["aim", "aimforge", "エイム", "練習", "瞄准"] },
       { href: "project-portfolio.html", labels: ["ポートフォリオサイト", "Portfolio website", "作品集网站"], terms: ["portfolio", "ポートフォリオ", "作品集"] },
       { href: "projects.html#project-turtle-graphics", labels: ["タートルグラフィックス", "Turtle graphics", "海龟绘图"], terms: ["turtle", "タートル", "graphics", "グラフィックス"] },
       { href: "projects.html#project-touhou-shooter", labels: ["東方風シューティングゲーム", "Touhou-inspired shooter", "东方风格射击游戏"], terms: ["touhou", "東方", "shooter", "シューティング"] },

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101510">
+  <meta name="description" content="フリック・トラッキング・反応速度を練習できるWebアプリです。結果の保存やCSV出力にも対応しています。">
+  <title>AIMFORGE — AIKICHIN PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css?v=20261024-aimforge-menu1">
+  <script src="script.js?v=20261024-aimforge-menu1" defer></script>
+</head>
+<body>
+  <div class="startup-screen" id="startup-screen" aria-label="Windows startup animation" data-no-translate>
+    <div class="startup-window">
+      <div class="startup-titlebar"><span class="startup-title-icon" aria-hidden="true">▣</span><span>AIKICHIN PORTFOLIO STARTUP</span><span class="startup-title-version">PERSONAL BUILD 001</span></div>
+      <div class="startup-content"><div class="startup-mark" aria-hidden="true">▣</div><div><p class="startup-heading">Starting Windows<span aria-hidden="true">...</span></p><p class="startup-subheading">INITIALIZING PERSONAL PORTFOLIO</p></div></div>
+      <p class="startup-progress-label" role="status" aria-live="polite">Loading profile and projects...</p>
+      <div class="startup-progress" role="progressbar" aria-label="Starting the site"><span></span></div>
+      <div class="startup-bottom"><span>SYSTEM STARTUP / 001</span><button class="startup-skip" type="button" data-startup-skip>Skip startup</button></div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <div class="brand">
+      <a class="brand-mark" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム">▣</a>
+      <div class="brand-text">
+        <div class="brand-command-line">
+          <a class="brand-prompt" href="index.html">aikichin0_0@portfolio:~$</a>
+          <form class="header-command-form" action="projects.html">
+            <input class="header-command" name="page" type="text" value="PROJECT" aria-label="ページ名を入力してEnterで移動" title="HOME / PROJECTS / ABOUT / CONTACT + Enter" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go">
+            <span class="header-command-feedback" role="status" data-no-translate hidden></span>
+          </form>
+        </div>
+        <a class="brand-sub" href="index.html">AIKICHIN PORTFOLIO</a>
+      </div>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span aria-hidden="true">＋</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="index.html">HOME</a><a class="active" href="projects.html" aria-current="page">PROJECTS</a><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="page-hero section-wrap">
+      <p class="eyebrow">PROJECT / 003 — AIM TRAINER</p>
+      <h1>AimForge<br><span class="accent">エイム練習アプリ.</span></h1>
+      <p>フリック・トラッキング・反応速度を練習できるWebアプリです。結果の保存やCSV出力にも対応しています。</p>
+      <div class="tag-row"><span>HTML / CSS</span><span>JavaScript</span><span>Canvas</span></div>
+    </section>
+    <section class="section-wrap detail-layout section-block">
+      <div class="detail-main">
+        <figure class="aimforge-preview"><img src="images/aimforge.svg" alt="的と照準、3つの練習モードを示すAimForgeのSVGイメージ"><figcaption>3つの練習モードを示したSVGイメージです。</figcaption></figure>
+        <section class="content-section"><p class="eyebrow">01 / OVERVIEW</p><h2>マウス操作を、繰り返し練習する</h2><p>表示された的をクリックするフリック、動く的を追うトラッキング、的が現れるまで待ってクリックする反応速度の3モードを備えた、ブラウザーで動くエイム練習アプリです。</p></section>
+        <section class="content-section"><p class="eyebrow">02 / FEATURES</p><h2>練習から記録の振り返りまで</h2><ul class="feature-list"><li>モード・難易度・練習時間を選択</li><li>直近100件の結果をブラウザー内に保存し、CSVで出力</li><li>タブを離れたときの自動一時停止</li><li>効果音と全画面表示に対応</li></ul></section>
+        <section class="content-section"><p class="eyebrow">03 / CONTROLS</p><h2>操作方法</h2><p>フリックと反応速度は的をクリックし、トラッキングは左ボタンを押したまま的を追います。Spaceで開始・一時停止・再開、Escで中断できます。中断した練習は記録に残りません。</p></section>
+        <section class="content-section"><p class="eyebrow">04 / IMPLEMENTATION</p><h2>ブラウザーだけで動く構成</h2><p>HTML・CSS・JavaScriptとCanvasで構成し、ゲーム処理と画面制御を分けています。外部フォントやライブラリを読み込まず、記録はlocalStorageに保存します。同じモード・難易度・時間で結果を比較できます。</p></section>
+      </div>
+      <aside class="detail-sidebar"><div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl><dt>TYPE</dt><dd>Web Application</dd><dt>TECHNOLOGY</dt><dd>HTML / CSS / JavaScript / Canvas</dd><dt>ROLE</dt><dd>個人制作</dd><dt>DATA</dt><dd>ブラウザー内に保存</dd></dl><a class="card-more" href="https://yotamaaikich.github.io/aimforge/" target="_blank" rel="noopener noreferrer">プレイする <span aria-hidden="true">↗</span></a><a class="card-more" href="https://github.com/yotamaaikich/aimforge" target="_blank" rel="noopener noreferrer">GitHub REPOSITORY <span aria-hidden="true">↗</span></a></div></aside>
+    </section>
+    <section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="project-notification-calendar.html">前の作品：通知カレンダー</a><a href="project-portfolio.html">次の作品：ポートフォリオ →</a></section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">portfolio<span>© <span data-year></span> AIKICHIN0_0</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer>
+</body>
+</html>
