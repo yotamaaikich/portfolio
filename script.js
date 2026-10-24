@@ -232,18 +232,6 @@
     });
     visual.append(preview);
 
-    const toggle = document.createElement("button");
-    toggle.className = "project-console-toggle";
-    toggle.type = "button";
-    toggle.textContent = "VIEW PROJECT LOG";
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", `作品ログを表示: ${title}`);
-    toggle.addEventListener("click", () => {
-      const isOpen = card.classList.toggle("show-console");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.textContent = isOpen ? "HIDE PROJECT LOG" : "VIEW PROJECT LOG";
-    });
-    body.append(toggle);
   });
   languageSelect.addEventListener("change", () => {
     document.querySelectorAll(".project-grid .project-card").forEach((card) => {
@@ -283,14 +271,6 @@
   window.addEventListener("pageshow", (event) => {
     if (!event.persisted) return;
     pageTransition.classList.remove("is-active");
-    document.querySelectorAll(".project-grid .project-card.show-console").forEach((card) => {
-      card.classList.remove("show-console");
-      const toggle = card.querySelector(".project-console-toggle");
-      if (toggle) {
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.textContent = "VIEW PROJECT LOG";
-      }
-    });
     if (document.activeElement?.closest?.(".project-grid .project-card")) document.activeElement.blur();
 
     // The pointer can still be positioned over the same card after Back,

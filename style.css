@@ -161,9 +161,7 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .project-console-preview span { max-width: 100%; overflow-wrap: anywhere; }
 .project-console-label, .project-console-action { color: var(--green); font-size: .65em; letter-spacing: .08em; }
 .project-console-action { margin-top: .45rem; }
-.project-card:hover .project-console-preview, .project-card:focus-within .project-console-preview, .project-card.show-console .project-console-preview { opacity: 1; visibility: visible; transform: translateY(0); }
-.project-console-toggle { display: none; margin-top: .7rem; padding: .4rem .55rem; border: 1px solid var(--line-bright); background: transparent; color: var(--green); font: .62rem var(--mono); cursor: pointer; }
-.project-console-toggle:hover, .project-console-toggle:focus-visible { border-color: var(--green); background: #72f58a12; }
+.project-card:hover .project-console-preview, .project-card:focus-within .project-console-preview { opacity: 1; visibility: visible; transform: translateY(0); }
 .visual-cafeteria { height: 280px; background-color: #111a12; background-image: linear-gradient(#26362855 1px, transparent 1px), linear-gradient(90deg, #26362855 1px, transparent 1px); background-size: 24px 24px; }
 .visual-notification-calendar { width: 100%; min-width: 0; height: 280px; min-height: 260px; padding: 0; background: #101510; }
 .notification-calendar-picture { position: absolute; inset: 0; display: block; }
@@ -399,8 +397,8 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .page-transition-progress span { display: block; width: 30%; height: 100%; background: repeating-linear-gradient(90deg, #174d24 0 10px, #72f58a 10px 14px); animation: page-transition-progress .7s steps(5, end) infinite; }
 @keyframes page-transition-progress { from { transform: translateX(-120%); } to { transform: translateX(360%); } }
 @keyframes page-scan-beam { 10% { opacity: .9; } to { top: 102%; opacity: 0; } }
-@media (hover: none), (pointer: coarse) { .project-console-toggle { display: inline-flex; align-items: center; }.project-card:hover .project-console-preview, .project-card:focus-within .project-console-preview { opacity: 0; visibility: hidden; transform: translateY(8px); }.project-card.show-console .project-console-preview { opacity: 1; visibility: visible; transform: translateY(0); } }
-.suppress-project-preview .project-grid .project-card:hover .project-console-preview, .suppress-project-preview .project-grid .project-card:focus-within .project-console-preview, .suppress-project-preview .project-grid .project-card.show-console .project-console-preview { opacity: 0; visibility: hidden; transform: translateY(8px); }
+@media (hover: none), (pointer: coarse) { .project-card .project-console-preview { display: none; } }
+.suppress-project-preview .project-grid .project-card:hover .project-console-preview, .suppress-project-preview .project-grid .project-card:focus-within .project-console-preview { opacity: 0; visibility: hidden; transform: translateY(8px); }
 @media (prefers-reduced-motion: reduce) { .page-transition, .page-transition-window { transition-duration: .01ms; }.page-transition-progress span { animation-duration: .01ms; }.page-transition.is-active::after { animation: none; }.scroll-progress { transition: none; }.project-console-preview { transition: none; }.reveal-on-scroll, .reveal-on-scroll.is-revealed { opacity: 1; transform: none; transition: none; } }
 .language-switch { min-height: 34px; padding: .35rem 1.7rem .35rem .55rem; border: 1px solid var(--line-bright); border-radius: 0; background: var(--panel); color: var(--green); font: 500 .66rem var(--mono); cursor: pointer; }
 .language-switch:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
