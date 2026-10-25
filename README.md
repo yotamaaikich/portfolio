@@ -6,6 +6,8 @@
 
 ## 掲載作品
 
+- **PIANO PULSE** — 8キーで演奏するブラウザー音楽ゲーム。長押し・同時押し・HARD限定フリック、難易度別チュートリアル、譜面エディタ、オンラインランキングを搭載しています。Codexを使用して制作しています。[プレイする](https://yotamaaikich.github.io/pulse-eight/) / [GitHub](https://github.com/yotamaaikich/pulse-eight)
+
 - **食堂混雑状況確認サイト** — JavaScriptとSupabaseを使い、混雑状況・予測・メニューを確認できる5人のチーム制作アプリです。担当はソースの統合、Viteのビルド環境、GitHub Pagesの公開設定、人数認識用AIモデルの配信準備、README・ライセンス表記の整備です。2026年11月のハッカソン展示に向けて制作中です。[GitHub](https://github.com/yotamaaikich/cafeteria-site) / [サイト（未完成・公開準備中）](https://yotamaaikich.github.io/cafeteria-site/)
 - **通知カレンダー** — WindowsとAndroidに届く通知から予定候補を作り、登録した予定を端末間で同期する個人制作アプリです。通知の原文は端末内に残し、クラウドには登録済みの予定だけを同期します。
 - **AimForge** — フリック・トラッキング・反応速度を練習するWebアプリです。結果をブラウザー内に保存し、CSVで出力できます。[プレイする](https://yotamaaikich.github.io/aimforge/) / [GitHub](https://github.com/yotamaaikich/aimforge)
@@ -25,6 +27,7 @@ HTML、CSS、JavaScriptで作った静的サイトです。GitHub Actionsを使�
 - projects.html — 作品一覧と授業の成果物
 - project-cafeteria.html — 食堂混雑状況確認サイト
 - project-notification-calendar.html — 通知カレンダー
+- project-piano-pulse.html — PIANO PULSE（8キー音楽ゲーム）
 - project-aimforge.html — AimForge（エイム練習アプリ）
 - project-portfolio.html — ポートフォリオサイト
 - about.html — プロフィール、活動履歴、技術・ツール
@@ -36,7 +39,7 @@ HTML、CSS、JavaScriptで作った静的サイトです。GitHub Actionsを使�
 
 ## 画像について
 
-東方風シューティングゲームの画像は、実際のプレイ画面です。食堂サイト・通知カレンダー・AimForgeの画面は、機能構成を説明するために作ったSVG再現図で、実アプリのスクリーンショットではありません。
+東方風シューティングゲームの画像は、実際のプレイ画面です。食堂サイト・通知カレンダー・AimForge・PIANO PULSEの画面は、機能構成を説明するために作ったSVG再現図で、実アプリのスクリーンショットではありません。
 
 ## ローカルで確認する
 
@@ -45,3 +48,4 @@ HTML、CSS、JavaScriptで作った静的サイトです。GitHub Actionsを使�
 ## GitHub Pagesへのデプロイ
 
 mainブランチへのpushでGitHub Actionsがサイトをデプロイします。リポジトリの **Settings → Pages → Build and deployment** で、Sourceを **GitHub Actions** に設定してください。
+

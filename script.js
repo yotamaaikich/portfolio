@@ -1,5 +1,12 @@
 (() => {
   const copy = {
+    "キーボードの8キーで演奏するブラウザー音楽ゲーム。長押し・同時押し・HARD限定フリックに対応し、譜面作成とオンラインランキングも備えています。": ["An eight-key browser rhythm game with holds, chords, HARD-only flicks, a chart editor and online leaderboards.", "使用八个按键演奏的网页音游，支持长按、同时按键、HARD专属上排按键操作、谱面编辑和在线排行榜。"],
+    "PIANO PULSEの詳細": ["PIANO PULSE details", "PIANO PULSE 详情"],
+    "8レーンとピアノ鍵盤を描いたPIANO PULSEの画面イメージ": ["PIANO PULSE concept showing eight lanes and a piano keyboard", "展示八轨道和钢琴键盘的 PIANO PULSE 示意图"],
+    "8キーの音楽ゲーム.": ["eight-key rhythm game.", "八键音乐游戏。"],
+    "ゲームで遊ぶ ↗": ["Play game ↗", "开始游戏 ↗"],
+    "個人制作（Codexを使用）": ["Personal project (made with Codex)", "个人项目（使用 Codex 制作）"],
+
     "フリック・トラッキング・反応速度を練習できるWebアプリです。結果の保存やCSV出力にも対応しています。": ["A web app for flick, tracking and reflex practice, with saved results and CSV export.", "支持甩枪、跟枪和反应速度训练的网页应用，可保存成绩并导出 CSV。"],
     "AimForgeの詳細": ["AimForge details", "AimForge 详情"],
     "的と照準、3つの練習モードを示すAimForgeのSVGイメージ": ["SVG concept showing targets, a crosshair and three AimForge training modes", "展示靶标、准星和 AimForge 三种训练模式的 SVG 示意图"],
@@ -126,6 +133,7 @@
       "contact.html": ["CONTACT — AIKICHIN PORTFOLIO", "联系 — AIKICHIN 作品集"],
       "project-cafeteria.html": ["CAFETERIA CROWD MONITOR — AIKICHIN PORTFOLIO", "食堂拥挤情况查询 — AIKICHIN 作品集"],
       "project-notification-calendar.html": ["NOTIFICATION CALENDAR — AIKICHIN PORTFOLIO", "通知日历 — AIKICHIN 作品集"],
+      "project-piano-pulse.html": ["PIANO PULSE — AIKICHIN PORTFOLIO", "PIANO PULSE — AIKICHIN 作品集"],
       "project-aimforge.html": ["AIMFORGE — AIKICHIN PORTFOLIO", "AimForge — AIKICHIN 作品集"],
       "project-portfolio.html": ["PORTFOLIO SITE — AIKICHIN PORTFOLIO", "作品集网站 — AIKICHIN 作品集"],
       "404.html": ["404 — PAGE NOT FOUND — AIKICHIN PORTFOLIO", "404 — 页面未找到 — AIKICHIN 作品集"]
@@ -319,6 +327,7 @@
       { command: "contact", label: "CONTACT", href: "contact.html", aliases: [] },
       { command: "cafeteria", label: "CAFETERIA", href: "project-cafeteria.html", aliases: ["project-cafeteria"] },
       { command: "calendar", label: "CALENDAR", href: "project-notification-calendar.html", aliases: ["project-notification-calendar"] },
+      { command: "piano", label: "PIANO PULSE", href: "project-piano-pulse.html", aliases: ["piano-pulse", "pulse", "project-piano-pulse"] },
       { command: "aimforge", label: "AIMFORGE", href: "project-aimforge.html", aliases: ["aim", "project-aimforge"] },
       { command: "portfolio", label: "PORTFOLIO", href: "project-portfolio.html", aliases: ["project-portfolio"] }
     ];
@@ -734,6 +743,7 @@
       { href: "projects.html", labels: ["制作物一覧", "All projects", "作品列表"], terms: ["project", "作品", "制作物", "一覧"] },
       { href: "project-cafeteria.html", labels: ["食堂混雑状況確認サイト", "Cafeteria crowd monitor", "食堂拥挤情况查询"], terms: ["cafeteria", "食堂", "混雑"] },
       { href: "project-notification-calendar.html", labels: ["通知カレンダー", "Notification Calendar", "通知日历"], terms: ["notification", "teams", "通知", "予定"] },
+      { href: "project-piano-pulse.html", labels: ["PIANO PULSE 音楽ゲーム", "PIANO PULSE rhythm game", "PIANO PULSE 音乐游戏"], terms: ["piano", "pulse", "音ゲー", "音楽", "ピアノ", "rhythm"] },
       { href: "project-aimforge.html", labels: ["AimForge エイム練習アプリ", "AimForge aim trainer", "AimForge 瞄准训练"], terms: ["aim", "aimforge", "エイム", "練習", "瞄准"] },
       { href: "project-portfolio.html", labels: ["ポートフォリオサイト", "Portfolio website", "作品集网站"], terms: ["portfolio", "ポートフォリオ", "作品集"] },
       { href: "projects.html#project-turtle-graphics", labels: ["タートルグラフィックス", "Turtle graphics", "海龟绘图"], terms: ["turtle", "タートル", "graphics", "グラフィックス"] },
@@ -819,3 +829,4 @@
     });
   });
 })();
+

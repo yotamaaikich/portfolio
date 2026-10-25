@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101510">
+  <meta name="description" content="キーボードの8キーで演奏するブラウザー音楽ゲーム。長押し・同時押し・HARD限定フリックに対応し、譜面作成とオンラインランキングも備えています。">
+  <title>PIANO PULSE — AIKICHIN PORTFOLIO</title>
+  <link rel="stylesheet" href="style.css?v=20261025-piano-pulse">
+  <script src="script.js?v=20261025-piano-pulse" defer></script>
+</head>
+<body>
+  <div class="startup-screen" id="startup-screen" aria-label="Windows startup animation" data-no-translate>
+    <div class="startup-window">
+      <div class="startup-titlebar"><span class="startup-title-icon" aria-hidden="true">▣</span><span>AIKICHIN PORTFOLIO STARTUP</span><span class="startup-title-version">PERSONAL BUILD 001</span></div>
+      <div class="startup-content"><div class="startup-mark" aria-hidden="true">▣</div><div><p class="startup-heading">Starting Windows<span aria-hidden="true">...</span></p><p class="startup-subheading">INITIALIZING PERSONAL PORTFOLIO</p></div></div>
+      <p class="startup-progress-label" role="status" aria-live="polite">Loading profile and projects...</p>
+      <div class="startup-progress" role="progressbar" aria-label="Starting the site"><span></span></div>
+      <div class="startup-bottom"><span>SYSTEM STARTUP / 001</span><button class="startup-skip" type="button" data-startup-skip>Skip startup</button></div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <div class="brand">
+      <a class="brand-mark" href="index.html" aria-label="AIKICHIN PORTFOLIO ホーム">▣</a>
+      <div class="brand-text">
+        <div class="brand-command-line">
+          <a class="brand-prompt" href="index.html">aikichin0_0@portfolio:~$</a>
+          <form class="header-command-form" action="projects.html">
+            <input class="header-command" name="page" type="text" value="PROJECT" aria-label="ページ名を入力してEnterで移動" title="HOME / PROJECTS / ABOUT / CONTACT + Enter" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go">
+            <span class="header-command-feedback" role="status" data-no-translate hidden></span>
+          </form>
+        </div>
+        <a class="brand-sub" href="index.html">AIKICHIN PORTFOLIO</a>
+      </div>
+    </div>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU <span aria-hidden="true">＋</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="index.html">HOME</a><a class="active" href="projects.html" aria-current="page">PROJECTS</a><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="page-hero section-wrap"><p class="eyebrow">WEB RHYTHM GAME</p><h1>PIANO PULSE<br><span class="accent">8キーの音楽ゲーム.</span></h1><p>キーボードの8キーで演奏するブラウザー音楽ゲーム。長押し・同時押し・HARD限定フリックに対応し、譜面作成とオンラインランキングも備えています。</p><div class="tag-row"><span>JavaScript</span><span>Canvas / Web Audio</span><span>Supabase</span></div><div class="hero-actions"><a class="button button-primary" href="https://yotamaaikich.github.io/pulse-eight/" target="_blank" rel="noopener noreferrer">ゲームで遊ぶ ↗</a><a class="button button-outline" href="https://github.com/yotamaaikich/pulse-eight" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></section>
+    <section class="section-wrap detail-layout section-block"><div class="detail-main">
+      <figure class="aimforge-preview"><img src="images/piano-pulse.svg" alt="8レーンとピアノ鍵盤を描いたPIANO PULSEの画面イメージ"><figcaption>ゲームの構成を伝えるSVGイメージです。実際のプレイ画面とは異なります。</figcaption></figure>
+      <section class="content-section"><p class="eyebrow">01 / OVERVIEW</p><h2>ピアノ鍵盤を使った8レーンの演奏</h2><p>奥から手前へ流れるノーツを、A S D F / J K L ; の8キーで演奏する音楽ゲームです。ピアノ風の打鍵音と、左右の手を色で区別したレーンで、鍵盤を弾く感覚を目指しました。</p></section>
+      <section class="content-section"><p class="eyebrow">02 / FEATURES</p><h2>遊ぶ・作る・記録を比べる</h2><ul class="feature-list"><li>35曲を収録。EASY / NORMAL / HARDの3難易度</li><li>単押し・長押し・同時押し、HARD限定の上段キーフリック</li><li>難易度別チュートリアル。HARDのフリック練習もオン・オフ可能</li><li>譜面だけの全画面表示と、スコア・コンボ・達成率の表示</li><li>ノーツを手動配置する譜面エディタと、フルコンボした譜面の公開</li><li>曲・難易度別のオンラインランキングと、公開譜面の共有</li></ul></section>
+      <section class="content-section"><p class="eyebrow">03 / CONTROLS</p><h2>キーだけで練習からプレイまで</h2><p>Enterで開始、Escで一時停止。HARDのフリックは下段キーの直後に対応する上段キーを押します。キー配置・ノーツ速度・判定タイミング・動画と鍵盤それぞれの音量を変更できます。</p></section>
+      <section class="content-section"><p class="eyebrow">04 / IMPLEMENTATION</p><h2>ブラウザー描画とクラウドの記録</h2><p>Canvasでレーンとノーツを描画し、Web Audioでピアノ風の音を合成しています。SupabaseのEdge Functionsでプレイ入力を再判定し、ランキングと公開譜面を保存します。音楽はYouTubeの公式動画を埋め込み再生し、動画の読み込み待ちでは譜面を停止します。</p><p>譜面は独自の8鍵向け簡略アレンジです。原曲・映像の権利は各権利者に帰属します。YouTubeの広告が入る場合があります。</p></section>
+    </div><aside class="detail-sidebar"><div class="side-panel"><p class="eyebrow">PROJECT INFO</p><dl><dt>TYPE</dt><dd>Browser Rhythm Game</dd><dt>TECHNOLOGY</dt><dd>HTML / CSS / JavaScript / Canvas / Web Audio / Supabase</dd><dt>ROLE</dt><dd>個人制作（Codexを使用）</dd><dt>HOSTING</dt><dd>GitHub Pages</dd></dl><a class="card-more" href="https://yotamaaikich.github.io/pulse-eight/" target="_blank" rel="noopener noreferrer">ゲームで遊ぶ ↗</a><a class="card-more" href="https://github.com/yotamaaikich/pulse-eight" target="_blank" rel="noopener noreferrer">GitHub REPOSITORY ↗</a></div></aside></section>
+    <section class="section-wrap next-project"><a href="projects.html">← 制作物一覧に戻る</a><a href="project-aimforge.html">次の作品：AimForge →</a></section>
+  </main>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">portfolio<span>© <span data-year></span> AIKICHIN0_0</span></a><p>BUILT WITH CURIOSITY<span class="footer-cursor">_</span></p><a href="#main" class="back-top">TOP ↑</a></footer>
+</body>
+</html>
+
