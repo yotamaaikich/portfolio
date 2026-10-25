@@ -404,4 +404,4 @@ h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: .6rem; }
 .language-switch:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 
 
-.visual-piano-pulse{padding:0;background:#f4f3ee}.piano-pulse-art{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain}
+.visual-piano-pulse{padding:0;background:var(--bg)}.piano-pulse-art{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain}
