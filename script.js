@@ -1,6 +1,6 @@
 (() => {
   const copy = {
-    "キーボードの8キーで演奏するブラウザーリズムゲーム。長押し・同時押し・HARD限定フリックに対応し、譜面作成とオンラインランキングも備えています。": ["An eight-key browser rhythm game with holds, chords, HARD-only flicks, a chart editor and online leaderboards.", "使用八个按键演奏的网页音游，支持长按、同时按键、HARD专属上排按键操作、谱面编辑和在线排行榜。"],
+    "キーボードの8キーで演奏するブラウザーリズムゲーム。長押し・同時押し・HARD限定フリックに対応し、曲別ピアノ音とオンラインランキングも備えています。": ["An eight-key browser rhythm game with holds, chords, HARD-only flicks, per-track piano pitches and online leaderboards.", "使用八个按键演奏的网页音游，支持长按、同时按键、HARD专属上排按键操作、分曲钢琴音高和在线排行榜。"],
     "PIANO PULSEの詳細": ["PIANO PULSE details", "PIANO PULSE 详情"],
     "8レーンとピアノ鍵盤を描いたPIANO PULSEの画面イメージ": ["PIANO PULSE concept showing eight lanes and a piano keyboard", "展示八轨道和钢琴键盘的 PIANO PULSE 示意图"],
     "8キーのリズムゲーム.": ["eight-key rhythm game.", "八键音乐游戏。"],
