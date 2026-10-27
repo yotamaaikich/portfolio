@@ -8,7 +8,7 @@
 
 - **PIANO PULSE** — 8キーで演奏するブラウザーリズムゲーム。長押し・同時押し・HARD限定FLOAT（フロート）、難易度別チュートリアル、オンラインランキングを搭載しています。Codexを使用して制作しています。[プレイする](https://yotamaaikich.github.io/pulse-eight/) / [GitHub](https://github.com/yotamaaikich/pulse-eight)
 
-- **食堂混雑状況確認サイト** — JavaScriptとSupabaseを使い、混雑状況・予測・メニューを確認できる5人のチーム制作アプリです。担当はソースの統合、Viteのビルド環境、GitHub Pagesの公開設定、人数認識用AIモデルの配信準備、README・ライセンス表記の整備です。2026年11月のハッカソン展示に向けて制作中です。[GitHub](https://github.com/yotamaaikich/cafeteria-site) / [サイト（未完成・公開準備中）](https://yotamaaikich.github.io/cafeteria-site/)
+- **食堂混雑状況確認サイト** — JavaScriptとSupabaseを使い、混雑状況・予測・メニューを確認できる5人のチーム制作アプリです。担当はソースの統合、Viteのビルド環境、GitHub Pagesの公開設定、人数認識用AIモデルの配信設定、README・ライセンス表記の整備です。GitHub Pagesで公開し、2026年11月のハッカソン展示に向けて調整しています。[GitHub](https://github.com/yotamaaikich/cafeteria-site) / [公開サイト](https://yotamaaikich.github.io/cafeteria-site/)
 - **通知カレンダー** — WindowsとAndroidに届く通知から予定候補を作り、登録した予定を端末間で同期する個人制作アプリです。通知の原文は端末内に残し、クラウドには登録済みの予定だけを同期します。
 - **AimForge** — フリック・トラッキング・反応速度を練習するWebアプリです。結果をブラウザー内に保存し、CSVで出力できます。[プレイする](https://yotamaaikich.github.io/aimforge/) / [GitHub](https://github.com/yotamaaikich/aimforge)
 - **ポートフォリオサイト** — 掲載内容の企画、デザイン調整、HTML / CSS / JavaScriptでの実装、GitHub Pagesでの公開に取り組んだWebサイトです。

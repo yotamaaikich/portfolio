@@ -1,5 +1,12 @@
 (() => {
   const copy = {
+    "食堂の混雑状況・予測・メニューを確認できるWebアプリ。5人のチームで制作し、GitHub Pagesで公開中。": ["A five-person team project for checking cafeteria crowd levels, forecasts, and menus, now published on GitHub Pages.","五人团队开发的食堂拥挤情况、预测与菜单查询应用，现已发布到 GitHub Pages。"],
+    "5人のチームで制作した、食堂の混雑状況を見える化するWebアプリです。現在人数・混雑予測・メニュー・お知らせを確認でき、GitHub Pagesで公開しています。": ["A cafeteria crowd-monitoring web app built by a five-person team. It shows current counts, forecasts, menus, and announcements and is published on GitHub Pages.","由五人团队开发的食堂拥挤情况可视化应用，可查看当前人数、预测、菜单与通知，现已发布到 GitHub Pages。"],
+    "チーム開発で、各機能の統合、ビルド環境の整備、GitHub Pagesでの公開を担当しました。": ["I handled feature integration, the build environment, and deployment to GitHub Pages for the team project.","我负责团队项目的功能集成、构建环境搭建以及 GitHub Pages 部署。"],
+    "公開と今後の改善": ["Release and next improvements","发布与后续改进"],
+    "自動テスト16件と公開用ビルド、Supabase接続、管理者ログイン、AIモデルの読み込み・推論を確認して公開しました。展示に向けて、実際の食堂でのカメラ計測精度や使い勝手を確認・調整していきます。": ["Published after checking 16 automated tests, the production build, Supabase connectivity, administrator login, and AI model loading and inference. Before the showcase, we will evaluate camera counting accuracy and usability in the cafeteria.","通过 16 项自动化测试，并检查生产构建、Supabase 连接、管理员登录及 AI 模型加载与推理后发布。展示前将进一步检查并调整食堂现场的摄像头计数精度与易用性。"],
+    "公開中・展示に向けて調整中": ["Published; preparing for the showcase","已发布，正在为展示进行调整"],
+    "混雑表示はログインなしで利用できます。": ["The crowd display is available without signing in.","无需登录即可查看拥挤情况。"],
     "キーボードの8キーで演奏するブラウザーリズムゲーム。長押し・同時押し・HARD限定FLOAT（フロート）に対応し、オンラインランキングも備えています。": ["An eight-key browser rhythm game with holds, chords, HARD-only FLOAT notes, online leaderboards.", "使用八个按键演奏的网页音游，支持长按、同时按键、HARD专属FLOAT音符、在线排行榜。"],
     "PIANO PULSEの詳細": ["PIANO PULSE details", "PIANO PULSE 详情"],
     "8レーン・長押し・黄緑色のFLOATノーツを描いたPIANO PULSEのSVGイメージ": ["PIANO PULSE SVG concept showing eight lanes, holds and lime FLOAT notes", "展示八轨道、长按和黄绿色 FLOAT 音符的 PIANO PULSE SVG 示意图"],
@@ -28,11 +35,7 @@
     "前の作品：AimForge": ["Previous: AimForge", "上一个作品：AimForge"],
     "次の作品：AimForge →": ["Next: AimForge →", "下一个作品：AimForge →"],
 
-    "担当：統合・ビルド・公開設定・AIモデル配信": ["My role: integration, builds, deployment setup, and AI model hosting","负责：集成、构建、部署配置与 AI 模型托管"],
-    "サイト（未完成）": ["Website (in development)","网站（开发中）"],
-    "GitHubでソースを見る": ["View source on GitHub","在 GitHub 查看源码"],
-    "サイトは未完成・公開準備中です。公開予定URLのため、現在はアプリを利用できません。": ["The site is unfinished and being prepared for publication. The planned URL does not currently provide a working app.","网站尚未完成，正在准备发布。此链接为预定网址，目前无法使用应用。"],
-    "5人で制作している、食堂の混雑状況を見える化するWebアプリです。JavaScriptとSupabaseを使い、2026年11月のハッカソン展示に向けて制作しています。": ["A five-person team project that visualizes cafeteria crowd levels. We are building it with JavaScript and Supabase for a planned November 2026 hackathon showcase.","五人团队开发的食堂拥挤情况可视化应用，使用 JavaScript 和 Supabase 制作，计划参加 2026 年 11 月的黑客松展示。"],
+    "担当：統合・ビルド・公開設定・AIモデル配信": ["My role: integration, builds, deployment setup, and AI model hosting","负责：集成、构建、部署配置与 AI 模型托管"],    "GitHubでソースを見る": ["View source on GitHub","在 GitHub 查看源码"],    "5人で制作している、食堂の混雑状況を見える化するWebアプリです。JavaScriptとSupabaseを使い、2026年11月のハッカソン展示に向けて制作しています。": ["A five-person team project that visualizes cafeteria crowd levels. We are building it with JavaScript and Supabase for a planned November 2026 hackathon showcase.","五人团队开发的食堂拥挤情况可视化应用，使用 JavaScript 和 Supabase 制作，计划参加 2026 年 11 月的黑客松展示。"],
     "担当箇所：統合・公開": ["My role: integration and deployment","负责部分：集成与部署"],
     "チーム開発で、各機能をまとめて公開するための環境整備を担当しています。": ["I am responsible for preparing the project environment to integrate and publish the team's features.","我负责搭建项目环境，以集成并发布团队开发的各项功能。"],
     "各担当のソースをまとめるプロジェクト構成と依存関係の管理": ["Managing the project structure and dependencies for integrating the team's source files","管理用于集成各成员源码的项目结构与依赖"],
